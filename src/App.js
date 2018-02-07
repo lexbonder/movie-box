@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import apiKey from './apiKey.js';
+import fetchApi from './apiCall.js';
 import "./App.css";
 
 class App extends Component {
@@ -9,25 +9,9 @@ class App extends Component {
   }
 
   componentDidMount = async() => {
-    try {
-      const initalFetch = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
-      const movieData = await initalFetch.json();
-      this.cleanData(movieData.results)
-    } catch (error) {
-      throw new Error('error') 
-    }
+    await fetchApi();
   }
 
-  cleanData = (movieArray) => {
-    movieArray.map(movie => ({
-        title: movie.title,
-        date: movie.release_date,
-        overview: movie.overview,
-        poster: movie.poster_path,
-        backdrop: movie.backdrop_path,
-        id: movie.id
-    }))
-  }
 
   render() {
     return (
