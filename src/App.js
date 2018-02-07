@@ -1,36 +1,45 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import fetchApi from './apiCall.js';
-import { connect } from 'react-redux'
-import "./App.css";
+import { connect } from 'react-redux';
+import { updateMovie } from './actions';
+import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {}
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
-  componentDidMount = async() => {
-    await fetchApi();
-  }
+  componentDidMount = async () => {
+    const movies = await fetchApi();
+    this.sendMoviesToStore(movies);
+  };
 
+  sendMoviesToStore = (movies) => {
+    movies.forEach(movie => {
+      this.props.addMovie(movie)
+    });
+  }
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
+    //url root for images = https://image.tmdb.org/t/p/w500/
     return (
       <div className="App">
         <h1>movie tracker beyotch</h1>
+        
       </div>
     );
   }
 }
 
-const mapStateToProps = store => ({
-   movies: store.movies
-})
+export const mapStateToProps = state => ({
+  movies: state.movies
+});
 
-const mapDispatchToProps = dispatch => {
-  return {}
-}
+export const mapDispatchToProps = dispatch => ({
+  addMovie: movie => dispatch(updateMovie(movie))
+});
 
-connect(mapStateToProps, mapDispatchToProps)(App)
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+

@@ -1,13 +1,15 @@
-import {combineReducers} from 'redux';
-import updateMovie from '../actions';
+import { combineReducers } from 'redux';
 
-const movieReducer = (movies = [], updateMovie) => {
-    return [...movies, {...updateMovie, favorite: false}]
-}
 
-const rootReducer = combineReducers({
-movies: movieReducer
-})
+const movieReducer = (state = [], action) => {
+  switch (action.type) {
+  case 'UPDATE_MOVIE':
+    return [...state, { ...action, favorite: false }];
+  default:
+    return state;
+  }
+};
 
-export default rootReducer;
-
+export const rootReducer = combineReducers({
+  movies: movieReducer
+});
