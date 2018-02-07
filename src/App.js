@@ -1,30 +1,36 @@
 import React, { Component } from "react";
-import apiKey from './apiKey.js';
-import logo from "./logo.svg";
+import fetchApi from './apiCall.js';
+import { connect } from 'react-redux'
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
-    this.state ={}
+    this.state = {}
   }
 
   componentDidMount = async() => {
-    try {
-      const initalFetch = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
-      const movieData = await initalFetch.json();
-      console.log(movieData.results);
-    } catch (error) {
-      throw new Error('error') 
-    }
+    await fetchApi();
   }
 
+
   render() {
+    console.log(this.props)
     return (
       <div className="App">
+        <h1>movie tracker beyotch</h1>
       </div>
     );
   }
 }
 
+const mapStateToProps = store => ({
+   movies: store.movies
+})
+
+const mapDispatchToProps = dispatch => {
+  return {}
+}
+
+connect(mapStateToProps, mapDispatchToProps)(App)
 export default App;
