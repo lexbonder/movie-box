@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import fetchApi from './apiCall.js';
 import { connect } from 'react-redux';
 import { addMovie } from './actions';
-import Card from './components/Card/Card'
+import { Router, NavLink, Route } from 'react-router-dom';
+import Card from './components/Card/Card';
+// import Favorites from './components/Favorites/Favorites';
 import './App.css';
 
 export class App extends Component {
@@ -23,12 +25,22 @@ export class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
+    return <div className="App">
+          <header>
+            <NavLink to="/Card" className="nav">
+              Home
+            </NavLink>
+            {/* <NavLink to="/favorites" className="nav">
+              Favorites
+            </NavLink> */}
+
+          </header>
+        {/* <Route exact path="/favorites" component={Favorites} /> */}
+        <Route exact path='/Card' component={Card} />
+
         <h1>movie tracker beyotch</h1>
         <Card />
-      </div>
-    );
+      </div>;
   }
 }
 
