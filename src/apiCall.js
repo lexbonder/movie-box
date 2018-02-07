@@ -17,7 +17,6 @@ const cleanData = (movieArray) => {
     date: movie.release_date,
     overview: movie.overview,
     poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
-    backdrop: `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`,
     id: movie.id
   }));
 };
