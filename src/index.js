@@ -8,17 +8,16 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
 
-// const store = createStore(rootReducer);
+const store = createStore(rootReducer);
 
-// const router = (
-//         <BrowserRouter>
-//             <App />
-//         </BrowserRouter>
-// )
+const router = (
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+);
 
 ReactDOM.render(
-    <App />,
-    // <Provider store={store}>router</Provider>, 
+    <Provider store={store}>{router}</Provider>, 
     document.getElementById('root')
 );
 
