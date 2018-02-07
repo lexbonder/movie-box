@@ -16,8 +16,8 @@ const cleanData = (movieArray) => {
     title: movie.title,
     date: movie.release_date,
     overview: movie.overview,
-    poster: movie.poster_path,
-    backdrop: movie.backdrop_path,
+    poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+    backdrop: `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`,
     id: movie.id
   }));
 };

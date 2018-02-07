@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
 
-
 const movieReducer = (state = [], action) => {
   switch (action.type) {
-  case 'UPDATE_MOVIE':
-    return [...state, { ...action, favorite: false }];
+  case 'ADD_MOVIE':
+    return [...state, { ...action.movie, favorite: false }];
   default:
     return state;
   }
