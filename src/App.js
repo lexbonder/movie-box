@@ -15,8 +15,7 @@ class App extends Component {
       const movieData = await initalFetch.json();
       console.log(movieData.results);
     } catch (error) {
-      console.log('error');
-      
+      throw new Error('error') 
     }
   }
 
