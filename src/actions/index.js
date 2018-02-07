@@ -2,12 +2,17 @@
 //Toggle Favorites
 //Set Filter
 
-export const updateMovie = ({title, date, overview, poster, backdrop, id}) => ({
-  type: 'UPDATE_MOVIE',
-  title,
-  date,
-  overview,
-  poster,
-  backdrop,
-  id
+export const addMovie = (movie) => ({
+  type: 'ADD_MOVIE',
+  movie
 });
+
+export const toggleFavorite = id => ({
+  type: 'TOGGLE_FAVORITE',
+  id
+})
+
+export const addFavorite = movie => ({
+  type: 'ADD_FAVORITE',
+  movie
+})

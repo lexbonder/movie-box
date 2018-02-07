@@ -1,15 +1,8 @@
 import { combineReducers } from 'redux';
-
-
-const movieReducer = (state = [], action) => {
-  switch (action.type) {
-  case 'UPDATE_MOVIE':
-    return [...state, { ...action, favorite: false }];
-  default:
-    return state;
-  }
-};
+import { movieReducer } from './movieReducer';
+import { favoritesReducer } from './favoritesReducer'
 
 export const rootReducer = combineReducers({
-  movies: movieReducer
+  movies: movieReducer,
+  favorites: favoritesReducer
 });
