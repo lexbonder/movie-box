@@ -7,7 +7,11 @@ export class Card extends Component {
       const renderedMovies = movies.map((movie, index) => {
         return (
           <div key={index}>
+            <button>Favorite</button>
             <h1>{movie.title}</h1>
+            <h2>Release Date: {movie.date}</h2>
+            <img src={movie.poster} />
+            <p>{movie.overview}</p>
           </div>
         )
       });
