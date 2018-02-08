@@ -1,4 +1,5 @@
 import fetchApi from './apiCall.js';
+import cleanData from './apiCall.js';
 
 describe('fetchApi',  () => {
     beforeAll(() => {
@@ -25,5 +26,4 @@ describe('fetchApi',  () => {
           expect(err).toEqual(expectedError)
         }
     });
-
 });
