@@ -19,20 +19,24 @@
 }
 
 header {
-  background-color:#262626;
-  height: 170px;
+  background-image: url('./images/popcorn.jpg');
+  background-size: 690px;
+  height: 200px;
   margin-bottom: 40px;
+  opacity: 0.6;
   padding: 20px;
-  color: white;
+  z-index: -1;
 }
 
-header h1 {
+.heading {
+  color: rgb(255, 255, 255);
   font-family: 'Russo One', sans-serif;
-  font-size: 45px;
-  right: 20px;  
+  font-size: 35px;  
+  position: absolute;
   display: inline-block;
-  top: 20px;
-  
+  top: -5px;
+  left: 500px;
+  z-index: 3;  
 }
 
 .App-intro {
@@ -43,6 +47,12 @@ header h1 {
   color: rgb(169, 0, 0);
   font-size: 18px;
   position: relative;
+  left: 600px;
+  top: 0px;
+}
+
+.nav:hover {
+  color: rgb(255, 2, 2);
 }
 
 @keyframes App-logo-spin {
