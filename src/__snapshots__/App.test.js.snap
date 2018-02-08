@@ -17,38 +17,77 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
-        movie tracker beyotch
-      </h1>,
+      "children": Array [
+        <header>
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/Card"
+          >
+            Home
+          </NavLink>
+        </header>,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/Card"
+        />,
+        <h1>
+          movie tracker beyotch
+        </h1>,
+        <Connect(Card) />,
+      ],
       "className": "App",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "movie tracker beyotch",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/Card"
+          >
+            Home
+          </NavLink>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Home",
+            "className": "nav",
+            "to": "/Card",
+          },
+          "ref": null,
+          "rendered": "Home",
+          "type": [Function],
+        },
+        "type": "header",
       },
-      "ref": null,
-      "rendered": "movie tracker beyotch",
-      "type": "h1",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <h1>
-          movie tracker beyotch
-        </h1>,
-        "className": "App",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/Card",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -59,6 +98,115 @@ ShallowWrapper {
         "rendered": "movie tracker beyotch",
         "type": "h1",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <header>
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="nav"
+              to="/Card"
+            >
+              Home
+            </NavLink>
+          </header>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/Card"
+          />,
+          <h1>
+            movie tracker beyotch
+          </h1>,
+          <Connect(Card) />,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="nav"
+              to="/Card"
+            >
+              Home
+            </NavLink>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "Home",
+              "className": "nav",
+              "to": "/Card",
+            },
+            "ref": null,
+            "rendered": "Home",
+            "type": [Function],
+          },
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/Card",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "movie tracker beyotch",
+          },
+          "ref": null,
+          "rendered": "movie tracker beyotch",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],
