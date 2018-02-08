@@ -19,7 +19,7 @@
 }
 
 header {
-  background-color:#484848;
+  background-color:#262626;
   height: 170px;
   margin-bottom: 40px;
   padding: 20px;
@@ -40,7 +40,7 @@ header h1 {
 }
 
 .nav {
-  color: orange;
+  color: rgb(169, 0, 0);
   font-size: 18px;
   position: relative;
 }

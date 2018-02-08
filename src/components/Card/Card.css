@@ -14,7 +14,6 @@
   height: 450px;
   width: 300px;
   padding: 50px 10px;
-  border: 1px solid black;
 }
 
 .Card img {
@@ -28,18 +27,22 @@
 
 .Card button {
   position: absolute;
-  right: 20px;
+  right: -2px;
   top: 0px;
 
   font-size: 40px;
-  color: #555;
+  color: rgba(142, 142, 142, 0.748);
 
   height: 50px;
   width: 50px;
-  background-color: #d00;
+  background-color: transparent;
   border: none;
-  outline: none;
+
   z-index: 3;
+}
+
+.Card button:hover {
+  color: rgb(210, 185, 0)
 }
 
 .textBox {
@@ -78,6 +81,7 @@
 }
 
 .back{
+  background-color: white;
   transform: rotateY(180deg);
 }
 
