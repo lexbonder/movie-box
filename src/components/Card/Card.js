@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReduxThunk from 'redux-thunk'
 import { connect } from "react-redux";
 import { toggleFavorite, addFavorite } from "../../actions";
+import './Card.css'
 
 export class Card extends Component {
 
@@ -17,22 +18,28 @@ export class Card extends Component {
   render() {
     const { movies, toggleFavorites, favorites, addToFavorites } = this.props;
     const renderedMovies = movies.map((movie, index) => {
-      return (
-        <div key={index}>
-          <button
-            id={movie.id}
-            onClick={event => this.handleClick(event.target.id)}
-          >
-            Favorite
-          </button>
-          <h1>{movie.title}</h1>
-          <h2>Release Date: {movie.date}</h2>
-          <img src={movie.poster} />
-          <p>{movie.overview}</p>
-        </div>
-      );
+      return <div className="Card flip-container" key={index}>
+          <div className="posterWrapper flipper">
+            <button
+              id={movie.id} 
+              onClick={event => this.handleClick(event.target.id)}>
+              &#9733;
+            </button>
+            <img src={movie.poster}
+              className='front' />
+            <div className='textBox back'>
+              <h1>{movie.title}</h1>
+              <p>{movie.overview}</p>
+              <h3>({movie.date})</h3>
+            </div>
+          </div>
+        </div>;
     });
-    return <div>{renderedMovies}</div>;
+    return(
+      <div className='cardWrapper'>
+        {renderedMovies}
+      </div>
+    )
   }
 }
 
