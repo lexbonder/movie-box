@@ -15,4 +15,15 @@ describe('fetchApi',  () => {
         fetchApi();
         expect(window.fetch).toHaveBeenCalled();
     });
+
+    it('throw error when catch is hit', async() => {
+        const expectedError = Error('error')
+
+        try {
+          await fetchApi();
+        } catch(err) {
+          expect(err).toEqual(expectedError)
+        }
+    });
+
 });
