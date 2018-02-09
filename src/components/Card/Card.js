@@ -29,8 +29,8 @@ export class Card extends Component {
               className='front' />
             <div className='textBox back'>
               <h1 className='movie-title'>{movie.title}</h1>
+              <p className='date'>{movie.date}</p>
               <p>{movie.overview}</p>
-              <p>{movie.date}</p>
             </div>
           </div>
         </div>;
