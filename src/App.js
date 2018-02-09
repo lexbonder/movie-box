@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fetchApi from './apiCall.js';
 import { connect } from 'react-redux';
 import { addMovie } from './actions';
+import Controls from './components/Controls/Controls';
 import { Router, NavLink, Route } from 'react-router-dom';
 import Card from './components/Card/Card';
 // import Favorites from './components/Favorites/Favorites';
@@ -18,29 +19,33 @@ export class App extends Component {
     this.sendMoviesToStore(moviesArray);
   };
 
-  sendMoviesToStore = (moviesArray) => {
+  sendMoviesToStore = moviesArray => {
     moviesArray.forEach(movie => {
-      this.props.changeStore(movie)
+      this.props.changeStore(movie);
     });
-  }
+  };
 
   render() {
-    return <div className="App">
-          <header>
-            <NavLink to="/Card" className="nav">
-              Home
-            </NavLink>
-            {/* <NavLink to="/favorites" className="nav">
+    return (
+      <div className="App">
+        <header>
+          <NavLink to="/Controls" className="nav">
+            Login
+          </NavLink>
+          <NavLink to="/Card" className="nav">
+            Home
+          </NavLink>
+          {/* <NavLink to="/favorites" className="nav">
               Favorites
             </NavLink> */}
-
-          </header>
+        </header>
         {/* <Route exact path="/favorites" component={Favorites} /> */}
-        <Route exact path='/Card' component={Card} />
-
+        <Route exact path="/Card" component={Card} />
+        <Route exact path='/Controls' component={Controls} />
         <h1>movie tracker beyotch</h1>
         <Card />
-      </div>;
+      </div>
+    );
   }
 }
 
@@ -49,4 +54,3 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(App);
-

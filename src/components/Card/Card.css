@@ -28,7 +28,6 @@
 
 .Card button {
   position: absolute;
-  right: 20px;
   top: 0px;
 
   font-size: 40px;
@@ -40,6 +39,15 @@
   border: none;
   outline: none;
   z-index: 3;
+}
+
+button.front
+{
+  right: 20px;
+}
+
+button.back{
+  left: 20px;
 }
 
 .textBox {
