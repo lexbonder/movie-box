@@ -5,14 +5,18 @@ import { toggleFavorite, addFavorite } from '../../actions';
 import './Card.css';
 
 export class Card extends Component {
-  handleClick = async id => {
-   await this.props.toggleFavorites(id);
-    const favorites = this.props.movies.filter(movie => movie.favorite);
-   
-    favorites.forEach(async favorite => {
-     await this.props.addToFavorites(favorite);
+  
+  handleClick = async (card) => {
+  
+   await this.props.toggleFavorites(card.id);
+    let selectedMovie =  this.props.movies.find(movie => movie.favorite);
+
+    selectedMovie ? this.props.addToFavorites(selectedMovie) : this.props.favorites
+  
+    // favorites.forEach(async favorite => {
+    //  await this.props.addToFavorites(favorite);
      
-    });
+    // });
     //console.log(favorites);
   };
 
@@ -32,7 +36,7 @@ export class Card extends Component {
             <button
               className='back'
               id={movie.id}
-              onClick={event => this.handleClick(event.target.id)}
+              onClick={event => this.handleClick(event.target)}
             >
               &#9733;
             </button>
