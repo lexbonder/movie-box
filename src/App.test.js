@@ -9,6 +9,10 @@ describe('App ', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
+  it('should match the snapshot when the user clicks login/signup', () => {
+    
+  })
+
   // it('calls updateMovie when sendMoviesToStore is called', () => {
   //   const mockUpdateMovie = jest.fn()
   //   const mockMovies = [{movie: 'name'}]
@@ -24,5 +28,7 @@ describe('App ', () => {
     mapped.changeStore();
     expect(mockDispatch).toHaveBeenCalled();
   });
+
+
 
 });

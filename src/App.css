@@ -4,8 +4,11 @@
   box-sizing: border-box;
 }
 
-.App {
+body {
   background-color: rgba(0, 0, 0, 0.885);
+}
+
+.App {
   text-align: center;
 }
 
@@ -51,6 +54,10 @@ header {
 
 .nav:hover {
   color: rgb(255, 2, 2);
+}
+
+.active {
+  /* For the NavLink, comes default, changes the current page's tab */
 }
 
 @keyframes App-logo-spin {

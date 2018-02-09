@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import fetchApi from './apiCall.js';
 import { connect } from 'react-redux';
 import { addMovie } from './actions';
-import Controls from './components/Controls/Controls';
-import { Router, NavLink, Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import LoginForm from './components/LoginForm/LoginForm';
 import Card from './components/Card/Card';
 // import Favorites from './components/Favorites/Favorites';
 import './App.css';
@@ -26,25 +27,19 @@ export class App extends Component {
   };
 
   render() {
-    return <div className="App">
-          <header>
-
-          </header>
-          <h1 className='heading'>movie tracker beyotch</h1>
-            <NavLink to="/Card" className="nav">
-              Home
-            </NavLink>
-            <NavLink to="/favorites" className="nav">
-              Favorites
-            </NavLink>
-        {/* <Route exact path="/favorites" component={Favorites} /> */}
-        <Route exact path='/Card' component={Card} />
-
-  
-        <div className='card-container'>
-          <Card />
-        </div>
-      </div>;
+    return <div className='App'>
+      <header>
+      </header>
+      <h1 className='heading'>movie tracker beyotch</h1>
+      <nav>
+        <NavLink to='/' className='nav'>Home</NavLink>
+        <NavLink to='/login/' className='nav'>Login/Sign up</NavLink>
+        {/*<NavLink to='/favorites' className='nav'>Favorites</NavLink>*/}
+      </nav>
+      {/* <Route exact path='/favorites' component={Favorites} /> */}
+      <Route exact path='/' component={Card} />
+      <Route strict path='/login/' component={LoginForm} />
+    </div>;
   }
 }
 
@@ -52,4 +47,4 @@ export const mapDispatchToProps = dispatch => ({
   changeStore: movie => dispatch(addMovie(movie))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
