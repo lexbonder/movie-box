@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
 .cardWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -10,6 +12,7 @@
 }
 
 .Card .posterWrapper {
+  background-color: rgba(70, 70, 70, 0.315); 
   position: relative;
   height: 450px;
   width: 300px;
@@ -32,10 +35,9 @@
 
   font-size: 40px;
   color: rgba(142, 142, 142, 0.748);
-
+  background-color: transparent;
   height: 50px;
   width: 50px;
-  background-color: transparent;
   border: none;
 
   z-index: 3;
@@ -49,7 +51,6 @@
   position: absolute;
   top: 50;
   left: 0;
-
   overflow: auto;
   height: 380px;
   overflow: auto;
@@ -62,6 +63,7 @@
 }
 
 .flip-container:hover .flipper, .flip-container.hover .flipper {
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.926);
  transform: rotateY(180deg)
 }
 
@@ -81,7 +83,17 @@
 }
 
 .back{
-  background-color: white;
+  /* background-color: rgb(97, 97, 100); */
   transform: rotateY(180deg);
+}
+
+.movie-title {
+  color: rgb(155, 0, 0);
+  font-family: 'Russo One', sans-serif;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.418);
+  font-size: 18px;
 }
 

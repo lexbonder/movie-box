@@ -28,9 +28,9 @@ export class Card extends Component {
             <img src={movie.poster}
               className='front' />
             <div className='textBox back'>
-              <h1>{movie.title}</h1>
+              <h1 className='movie-title'>{movie.title}</h1>
               <p>{movie.overview}</p>
-              <h3>({movie.date})</h3>
+              <p>{movie.date}</p>
             </div>
           </div>
         </div>;
