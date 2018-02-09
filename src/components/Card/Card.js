@@ -36,11 +36,13 @@ export class Card extends Component {
             >
               &#9733;
             </button>
-            <img src={movie.poster} className="front" />
-            <div className="textBox back">
-              <h1>{movie.title}</h1>
+
+            <img src={movie.poster}
+              className='front' />
+            <div className='textBox back'>
+              <h1 className='movie-title'>{movie.title}</h1>
+              <p className='date'>{movie.date}</p>
               <p>{movie.overview}</p>
-              <h3>({movie.date})</h3>
             </div>
           </div>
         </div>

@@ -1,13 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
 * {
   box-sizing: border-box;
 }
 
 .App {
+  background-color: rgba(0, 0, 0, 0.885);
   text-align: center;
-}
-
-.nav{
-  margin: 0 0 0 20px;
 }
 
 .App-logo {
@@ -15,19 +14,43 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+header {
+  background-image: url('./images/popcorn.jpg');
+  background-size: 690px;
+  height: 200px;
+  margin-bottom: 10px;
+  opacity: 0.6;
   padding: 20px;
-  color: white;
+  z-index: -1;
 }
 
-.App-title {
-  font-size: 1.5em;
+.heading {
+  color: rgb(255, 255, 255);
+  font-family: 'Russo One', sans-serif;
+  font-size: 35px;  
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  margin: auto;
+  width: 30%;
+  z-index: 3;  
 }
 
 .App-intro {
   font-size: large;
+}
+
+.nav {
+  color: rgb(169, 0, 0);
+  font-size: 18px;
+  margin: 0 0 0px 20px;
+  position: relative;
+  left: 600px;
+  top: -190px;
+}
+
+.nav:hover {
+  color: rgb(255, 2, 2);
 }
 
 @keyframes App-logo-spin {
