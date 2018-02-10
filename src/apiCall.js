@@ -49,14 +49,14 @@ export const userLogin = async ({password, email}) => {
     const reply = await fetch('/api/users')
     const allUsersArray = await reply.json();
     const currentUser = allUsersArray.data.find( user => user.email === email && user.password === password)
+    debugger;
     if (!currentUser) {
       console.log('E-mail and/or Password do not match')
     } else {
       return currentUser
     }
   } catch (loginError) {
-  const loginError = new Error('LoginError')
-    return loginError 
+    return 'It are broked'
   }
 }
 
