@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
-import { toggleFavorite, addFavorite } from '../../actions';
+import { toggleFavorite, addFavorite, removeFavorite } from '../../actions';
 import './Card.css';
 
 export class Card extends Component {
   
-  handleClick = async (card) => {
-  
-   await this.props.toggleFavorites(card.id);
-    let selectedMovie =  this.props.movies.find(movie => movie.favorite);
+  handleClick = async (movie, event) => {
+    event.preventDefault();
+    //console.log(movie)
+    await this.props.toggleFavorites(movie.id);
+    console.log(this.props.movies)
+    const selected = this.props.movies.find(card =>  movie.id === card.id)
+    
+    selected.favorite ? this.props.addToFavorites(selected) : this.props.removeFavorite(selected)  ;
 
-    selectedMovie ? this.props.addToFavorites(selectedMovie) : this.props.favorites
-  
-    // favorites.forEach(async favorite => {
-    //  await this.props.addToFavorites(favorite);
-     
-    // });
-    //console.log(favorites);
   };
 
   render() {
@@ -36,7 +33,7 @@ export class Card extends Component {
             <button
               className='back'
               id={movie.id}
-              onClick={event => this.handleClick(event.target)}
+              onClick={(event) => this.handleClick(movie, event)}
             >
               &#9733;
             </button>
@@ -63,7 +60,8 @@ export const mapStateToProps = store => ({
 
 export const mapDispatchToProps = dispatch => ({
   toggleFavorites: id => dispatch(toggleFavorite(id)),
-  addToFavorites: movie => dispatch(addFavorite(movie))
+  addToFavorites: movie => dispatch(addFavorite(movie)),
+  removeFavorite: movie => dispatch(removeFavorite(movie))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
