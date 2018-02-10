@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
-import { Route, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { Route, NavLink, Redirect } from 'react-router-dom';
 import { createUser, userLogin, getFavArray }  from '../../apiCall';
 import { getUser } from '../../actions'
 import './LoginForm.css';
@@ -38,12 +39,12 @@ export class LoginForm extends Component {
       // Should we be clever and put a 'confirm password field'?
       createUser(this.state);
     }
-    this.backToHome()
   };
 
   backToHome = () => {
-    // Redirect user to homepage '/'
-    // history.push('/')
+    if(this.props.user.id) {
+      return <Redirect to='/' />
+    }
   }
 
   render() {
@@ -100,15 +101,16 @@ export class LoginForm extends Component {
             <input type='submit' />
           </form>
         </article>
+        {this.backToHome()}
       </section>
     );
   }
 }
 
-export const mapStateToProps = store => ({});
+export const mapStateToProps = ({user}) => ({user});
 
 export const mapDispatchToProps = dispatch => ({
   getUser: user => dispatch(getUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm));
