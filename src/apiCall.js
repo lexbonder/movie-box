@@ -27,8 +27,7 @@ const cleanData = movieArray => {
   }));
 };
 
-export const userLogin = async (userInfo) => {
-
+export const createUser = async (userInfo) => {
   try {
     const reply = await fetch('/api/users/new', {
       method: 'POST',
@@ -37,8 +36,6 @@ export const userLogin = async (userInfo) => {
         'Content-Type': 'application/json'
       }
     });
-    console.log('reply', reply);
-    
   } catch (error) {
     const error = new Error('Add user is broken');
     return error;

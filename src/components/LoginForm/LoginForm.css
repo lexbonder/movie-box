@@ -1,5 +1,9 @@
+.login-wrap{
+  width:300px;
+  margin: 30px auto auto auto;
+}
+
 article {
-  width: 300px;
   background-color: white;
   padding: 15px;
   margin: auto;
