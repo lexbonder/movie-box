@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import ReduxThunk from 'redux-thunk';
+// import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Route, NavLink } from 'react-router-dom';
-import { createUser }  from '../../apiCall';
+import { createUser, userLogin }  from '../../apiCall';
+import { getUser } from '../../actions'
 import './LoginForm.css';
 
 export class LoginForm extends Component {
   constructor() {
-    super(),
+    super();
     this.state = {
       name: '',
       password: '',
@@ -26,20 +27,22 @@ export class LoginForm extends Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     const { name, password, email } = this.state
     event.preventDefault();
     if (name === '') {
-      // userLogin({password, email})
+      const user = await userLogin({password, email})
+      this.props.getUser(user)
     } else {
       // Should we be clever and put a 'confirm password field'?
       createUser(this.state);
-      this.backToHome()
     }
+    this.backToHome()
   };
 
   backToHome = () => {
-    history.push('/')
+    // Redirect user to homepage '/'
+    // history.push('/')
   }
 
   render() {
@@ -103,6 +106,8 @@ export class LoginForm extends Component {
 
 export const mapStateToProps = store => ({});
 
-export const mapDispatchToProps = dispatch => ({});
+export const mapDispatchToProps = dispatch => ({
+  getUser: user => dispatch(getUser(user))
+});
 
-export default connect(null, null)(LoginForm);
+export default connect(null, mapDispatchToProps)(LoginForm);

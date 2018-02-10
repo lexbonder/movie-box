@@ -18,6 +18,11 @@ export const addFavorite = movie => ({
 })
 
 export const removeFavorite = movie => ({
-  type: 'Remove_FAVORITE',
+  type: 'REMOVE_FAVORITE',
   movie
+})
+
+export const getUser = user => ({
+  type: 'GET_USER',
+  user
 })

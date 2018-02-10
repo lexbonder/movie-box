@@ -44,6 +44,22 @@ export const createUser = async (userInfo) => {
   }
 };
 
+export const userLogin = async ({password, email}) => {
+  try {
+    const reply = await fetch('/api/users')
+    const allUsersArray = await reply.json();
+    const currentUser = allUsersArray.data.find( user => user.email === email && user.password === password)
+    if (!currentUser) {
+      console.log('E-mail and/or Password do not match')
+    } else {
+      return currentUser
+    }
+  } catch (loginError) {
+  const loginError = new Error('LoginError')
+    return loginError 
+  }
+}
+
 
     // const getReply = await fetch('/api/users')
     // const allUsersArray = await getReply.json()
