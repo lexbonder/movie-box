@@ -6,7 +6,7 @@ import { Route, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import LoginForm from './components/LoginForm/LoginForm';
 import Card from './components/Card/Card';
-// import Favorites from './components/Favorites/Favorites';
+import Favorites from './components/Favorites/Favorites';
 import './App.css';
 
 export class App extends Component {
