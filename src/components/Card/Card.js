@@ -1,49 +1,46 @@
 import React, { Component } from 'react';
 // import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
-import { toggleFavorite, addFavorite, removeFavorite } from '../../actions';
+import { addFavorite, getFavArray, removeFavorite } from '../../apiCall';
 import './Card.css';
 
 export class Card extends Component {
   
-  handleClick = async (movie, event) => {
+  toggleFavorite = async (event, movie) => {
     event.preventDefault();
-    //console.log(movie)
-    await this.props.toggleFavorites(movie.id);
-    console.log(this.props.movies)
-    const selected = this.props.movies.find(card =>  movie.id === card.id)
-    
-    selected.favorite ? this.props.addToFavorites(selected) : this.props.removeFavorite(selected)  ;
-
+    const { id } = this.props.user;
+    const currentFavs = await getFavArray(id);
+    const newFav = { ...movie, user_id: id };
+    const favMovieIds = currentFavs.data.map(fav => fav.movie_id);
+    favMovieIds.includes(movie.movie_id)
+      ? removeFavorite(movie.movie_id, id)
+      : addFavorite(newFav);
   };
 
   render() {
-    const { movies, toggleFavorites, favorites, addToFavorites } = this.props;
+    const { movies } = this.props;
     const renderedMovies = movies.map((movie, index) => {
       return (
         <div className="Card flip-container" key={index}>
           <div className="posterWrapper flipper">
+            <button className="front">&#9733;</button>
             <button
-              className='front'
+              className="back"
               id={movie.id}
-              onClick={event => this.handleClick(event.target.id)}
-            >
-              &#9733;
-            </button>
-            <button
-              className='back'
-              id={movie.id}
-              onClick={(event) => this.handleClick(movie, event)}
+              onClick={event => this.toggleFavorite(event, movie)}
             >
               &#9733;
             </button>
 
-            <img src={movie.poster}
+            <img
+              src={movie.poster_path}
               alt={`Movie poster from ${movie.title}`}
-              className='front' />
-            <div className='textBox back'>
-              <h1 className='movie-title'>{movie.title}</h1>
-              <p className='date'>{movie.date}</p>
+              className="front"
+            />
+            <div className="textBox back">
+              <h1 className="movie-title">{movie.title}</h1>
+              <p className="date">{movie.release_date}</p>
+              <p className="rating">{`Rating: ${movie.vote_average} / 10`}</p>
               <p>{movie.overview}</p>
             </div>
           </div>
@@ -56,13 +53,14 @@ export class Card extends Component {
 
 export const mapStateToProps = store => ({
   movies: store.movies,
-  favorites: store.favorites
+  user: store.user
+  //favorites: store.favorites
 });
 
 export const mapDispatchToProps = dispatch => ({
-  toggleFavorites: id => dispatch(toggleFavorite(id)),
-  addToFavorites: movie => dispatch(addFavorite(movie)),
-  removeFavorite: movie => dispatch(removeFavorite(movie))
+  // toggleFavorites: id => dispatch(toggleFavorite(id)),
+  // addToFavorites: movie => dispatch(addFavorite(movie)),
+  // removeFavorite: movie => dispatch(removeFavorite(movie))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(mapStateToProps, null)(Card);

@@ -26,3 +26,7 @@ export const getUser = user => ({
   type: 'GET_USER',
   user
 })
+
+export const logOut = () => ({
+  type: 'LOG_OUT'
+})
