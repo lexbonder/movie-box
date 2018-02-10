@@ -27,19 +27,22 @@ export class App extends Component {
   };
 
   render() {
-    return <div className='App'>
-      <header>
-      </header>
-      <h1 className='heading'>movie tracker beyotch</h1>
-      <nav>
-        <NavLink to='/' className='nav'>Home</NavLink>
-        <NavLink to='/login/' className='nav'>Login/Sign up</NavLink>
-        <NavLink to='/favorites' className='nav'>Favorites</NavLink>*/
-      </nav>
-      /* <Route exact path='/favorites' component={Favorites} />
-      <Route exact path='/' component={Card} />
-      <Route strict path='/login/' component={LoginForm} />
-    </div>;
+    return (
+      <section className="App">
+        <header>
+          <NavLink to="/" className="logo">
+            Movie Tracker Beyotch
+          </NavLink>
+          <NavLink to="/login/" className="login">
+            Login / Sign up
+          </NavLink>
+          {/*<NavLink to='/favorites' className='nav'>Favorites</NavLink>*/}
+        </header>
+        {/* <Route exact path='/favorites' component={Favorites} /> */}
+        <Route exact path="/" component={Card} />
+        <Route strict path="/login/" component={LoginForm} />
+      </section>
+    );
   }
 }
 

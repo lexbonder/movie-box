@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Route, NavLink } from 'react-router-dom';
-import {userLogin}  from '../../apiCall';
+import { createUser }  from '../../apiCall';
 import './LoginForm.css';
 
 export class LoginForm extends Component {
@@ -25,7 +25,7 @@ export class LoginForm extends Component {
   handleSubmit = event => {
     const { name, password, email } = this.state
     event.preventDefault();
-    console.log(name)
+    //console.log(name)
     if (name === '') {
       console.log('user login would go here') 
       // userLogin({password, email})
@@ -33,13 +33,13 @@ export class LoginForm extends Component {
       // This is the sign-up funciton since it takes name password and email.
       // Should we be clever and put a 'confirm password field'?
       // // userSignUp(this.state)
-      userLogin(this.state);
+      createUser(this.state);
     }
   };
 
   render() {
     return (
-      <div>
+      <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
             name='logIn'>
@@ -91,7 +91,7 @@ export class LoginForm extends Component {
             <input type='submit' />
           </form>
         </article>
-      </div>
+      </section>
     );
   }
 }
