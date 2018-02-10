@@ -6,7 +6,7 @@ import { Route, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import LoginForm from './components/LoginForm/LoginForm';
 import Card from './components/Card/Card';
-// import Favorites from './components/Favorites/Favorites';
+import Favorites from './components/Favorites/Favorites';
 import './App.css';
 
 export class App extends Component {
@@ -34,9 +34,9 @@ export class App extends Component {
       <nav>
         <NavLink to='/' className='nav'>Home</NavLink>
         <NavLink to='/login/' className='nav'>Login/Sign up</NavLink>
-        {/*<NavLink to='/favorites' className='nav'>Favorites</NavLink>*/}
+        <NavLink to='/favorites' className='nav'>Favorites</NavLink>*/
       </nav>
-      {/* <Route exact path='/favorites' component={Favorites} /> */}
+      /* <Route exact path='/favorites' component={Favorites} />
       <Route exact path='/' component={Card} />
       <Route strict path='/login/' component={LoginForm} />
     </div>;
