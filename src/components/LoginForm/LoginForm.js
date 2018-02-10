@@ -31,14 +31,11 @@ export class LoginForm extends Component {
   handleSubmit = async event => {
     const { name, password, email } = this.state
     event.preventDefault();
-    if (name === '') {
-      const user = await userLogin({password, email});
-      this.props.getUser(user)
-      
-    } else {
-      // Should we be clever and put a 'confirm password field'?
-      createUser(this.state);
-    }
+    if (name !== '') {
+      await createUser(this.state); 
+    } 
+    const user = await userLogin({password, email});
+    this.props.getUser(user)
   };
 
   backToHome = () => {
