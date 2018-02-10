@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReduxThunk from 'redux-thunk';
+// import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { toggleFavorite, addFavorite, removeFavorite } from '../../actions';
 import './Card.css';
@@ -39,6 +39,7 @@ export class Card extends Component {
             </button>
 
             <img src={movie.poster}
+              alt={`Movie poster from ${movie.title}`}
               className='front' />
             <div className='textBox back'>
               <h1 className='movie-title'>{movie.title}</h1>

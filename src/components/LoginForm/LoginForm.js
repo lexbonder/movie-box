@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import ReduxThunk from 'redux-thunk';
+// import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Route, NavLink } from 'react-router-dom';
-import { createUser }  from '../../apiCall';
+import { createUser, userLogin }  from '../../apiCall';
+import { getUser } from '../../actions'
 import './LoginForm.css';
 
 export class LoginForm extends Component {
   constructor() {
-    super(),
+    super();
     this.state = {
       name: '',
       password: '',
       email: '',
     };
+  }
+
+  clearNameState = () => {
+    this.setState({name: ''})
   }
 
   handleInputs = event => {
@@ -22,33 +27,36 @@ export class LoginForm extends Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     const { name, password, email } = this.state
     event.preventDefault();
-    //console.log(name)
     if (name === '') {
-      console.log('user login would go here') 
-      // userLogin({password, email})
+      const user = await userLogin({password, email})
+      this.props.getUser(user)
     } else {
-      // This is the sign-up funciton since it takes name password and email.
       // Should we be clever and put a 'confirm password field'?
-      // // userSignUp(this.state)
       createUser(this.state);
     }
+    this.backToHome()
   };
+
+  backToHome = () => {
+    // Redirect user to homepage '/'
+    // history.push('/')
+  }
 
   render() {
     return (
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
+            onClick={this.clearNameState}
             name='logIn'>
               Log In
           </button>
         </NavLink>
         <NavLink to='/login/sign-up'>
           <button
-            onClick={this.toggleNameField}
             name='signUp'>
               Sign Up
           </button>
@@ -98,6 +106,8 @@ export class LoginForm extends Component {
 
 export const mapStateToProps = store => ({});
 
-export const mapDispatchToProps = dispatch => ({});
+export const mapDispatchToProps = dispatch => ({
+  getUser: user => dispatch(getUser(user))
+});
 
-export default connect(null, null)(LoginForm);
+export default connect(null, mapDispatchToProps)(LoginForm);

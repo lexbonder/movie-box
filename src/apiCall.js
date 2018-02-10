@@ -36,9 +36,33 @@ export const createUser = async (userInfo) => {
         'Content-Type': 'application/json'
       }
     });
+    const returnedObject = await reply.json()
+    // -- Trying to get user object
   } catch (error) {
     const error = new Error('Add user is broken');
     return error;
   }
 };
+
+export const userLogin = async ({password, email}) => {
+  try {
+    const reply = await fetch('/api/users')
+    const allUsersArray = await reply.json();
+    const currentUser = allUsersArray.data.find( user => user.email === email && user.password === password)
+    debugger;
+    if (!currentUser) {
+      console.log('E-mail and/or Password do not match')
+    } else {
+      return currentUser
+    }
+  } catch (loginError) {
+    return 'It are broked'
+  }
+}
+
+
+    // const getReply = await fetch('/api/users')
+    // const allUsersArray = await getReply.json()
+    // const signedInUser = allUsersArray.data.find(({id}) => id === returnedObject.id)
+    // console.log(signedInUser)
 export default fetchApi;

@@ -26,6 +26,24 @@ export class App extends Component {
     });
   };
 
+  toggleLogin = () => {
+    console.log('am i even happening?')
+    const logIn = (
+      <NavLink to="/login/" className="login">
+        Login / Sign up
+      </NavLink>
+    );
+    const logOut =(
+      <div className='log-out login'>
+        <h1> Welcome, {this.props.user.name}!</h1>
+        <a>
+          Log Out
+        </a>
+      </div>
+    )
+    return !this.props.user.id ? logIn : logOut
+  }
+
   render() {
     return (
       <section className="App">
@@ -33,9 +51,7 @@ export class App extends Component {
           <NavLink to="/" className="logo">
             Movie Tracker Beyotch
           </NavLink>
-          <NavLink to="/login/" className="login">
-            Login / Sign up
-          </NavLink>
+          {this.toggleLogin()}
           {/*<NavLink to='/favorites' className='nav'>Favorites</NavLink>*/}
         </header>
         {/* <Route exact path='/favorites' component={Favorites} /> */}
@@ -46,8 +62,10 @@ export class App extends Component {
   }
 }
 
+export const mapStateToProps = ({user}) => ({user})
+
 export const mapDispatchToProps = dispatch => ({
   changeStore: movie => dispatch(addMovie(movie))
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
