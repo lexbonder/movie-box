@@ -20,10 +20,11 @@ const cleanDate = date => {
 const cleanData = movieArray => {
   return movieArray.map(movie => ({
     title: movie.title,
-    date: cleanDate(movie.release_date),
+    vote_average: movie.vote_average,
+    release_date: cleanDate(movie.release_date),
     overview: movie.overview,
-    poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
-    id: movie.id
+    poster_path: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+    movie_id: movie.id
   }));
 };
 
@@ -48,8 +49,7 @@ export const userLogin = async ({password, email}) => {
   try {
     const reply = await fetch('/api/users')
     const allUsersArray = await reply.json();
-    const currentUser = allUsersArray.data.find( user => user.email === email && user.password === password)
-    debugger;
+    const currentUser = allUsersArray.data.find( user => user.email === email && user.password === password);
     if (!currentUser) {
       console.log('E-mail and/or Password do not match')
     } else {
@@ -57,6 +57,56 @@ export const userLogin = async ({password, email}) => {
     }
   } catch (loginError) {
     return 'It are broked'
+  }
+};
+
+export const getFavArray = async (id) => {
+  try {
+    const reply = await fetch(`/api/users/${id}/favorites/`);
+    const returnedObject = await reply.json();
+    return returnedObject;
+    
+  } catch (error) {
+    const error = new Error('GET favorites is broken');
+    return error;
+  }
+}
+
+export const removeFavorite = async (fav_id, user_id) => {
+
+  console.log('REMOVE FAV FIRE!');
+  
+  try {
+    const reply = await fetch(`/api/users/${user_id}/favorites/${fav_id}`, {
+      method: 'DELETE'
+    });
+    const returnedObject = await reply.json();
+    return returnedObject;
+    
+    // -- Trying to get fav object
+  } catch (error) {
+    const error = new Error('Remove Favorite is broken');
+    return error;
+  }
+}
+
+export const addFavorite = async (newFav) => {
+  console.log('Add Fav Fire!');
+  
+  try {
+    const reply = await fetch('/api/users/favorites/new', {
+      method: 'POST',
+      body: JSON.stringify(newFav),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const returnedObject = await reply.json();
+    
+    // -- Trying to get fav object
+  } catch (error) {
+    const error = new Error('Add fav is broken');
+    return error;
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fetchApi from './apiCall.js';
 import { connect } from 'react-redux';
-import { addMovie } from './actions';
+import { addMovie, logOut } from './actions';
 import { Route, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import LoginForm from './components/LoginForm/LoginForm';
@@ -36,9 +36,10 @@ export class App extends Component {
     const logOut =(
       <div className='log-out login'>
         <h1> Welcome, {this.props.user.name}!</h1>
-        <a>
+        <a href='#' onClick={this.props.logOut}>
           Log Out
         </a>
+        <h1>View Favs</h1>
       </div>
     )
     return !this.props.user.id ? logIn : logOut
@@ -65,7 +66,8 @@ export class App extends Component {
 export const mapStateToProps = ({user}) => ({user})
 
 export const mapDispatchToProps = dispatch => ({
-  changeStore: movie => dispatch(addMovie(movie))
+  changeStore: movie => dispatch(addMovie(movie)),
+  logOut: () => dispatch(logOut())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

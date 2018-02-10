@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { Route, NavLink } from 'react-router-dom';
-import { createUser, userLogin }  from '../../apiCall';
+import { createUser, userLogin, getFavArray }  from '../../apiCall';
 import { getUser } from '../../actions'
 import './LoginForm.css';
 
@@ -31,8 +31,9 @@ export class LoginForm extends Component {
     const { name, password, email } = this.state
     event.preventDefault();
     if (name === '') {
-      const user = await userLogin({password, email})
+      const user = await userLogin({password, email});
       this.props.getUser(user)
+      
     } else {
       // Should we be clever and put a 'confirm password field'?
       createUser(this.state);
