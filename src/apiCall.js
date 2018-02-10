@@ -36,9 +36,17 @@ export const createUser = async (userInfo) => {
         'Content-Type': 'application/json'
       }
     });
+    const returnedObject = await reply.json()
+    // -- Trying to get user object
   } catch (error) {
     const error = new Error('Add user is broken');
     return error;
   }
 };
+
+
+    // const getReply = await fetch('/api/users')
+    // const allUsersArray = await getReply.json()
+    // const signedInUser = allUsersArray.data.find(({id}) => id === returnedObject.id)
+    // console.log(signedInUser)
 export default fetchApi;

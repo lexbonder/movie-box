@@ -15,6 +15,10 @@ export class LoginForm extends Component {
     };
   }
 
+  clearNameState = () => {
+    this.setState({name: ''})
+  }
+
   handleInputs = event => {
     const { name, value } = event.target;
     this.setState({
@@ -25,30 +29,31 @@ export class LoginForm extends Component {
   handleSubmit = event => {
     const { name, password, email } = this.state
     event.preventDefault();
-    //console.log(name)
     if (name === '') {
-      console.log('user login would go here') 
       // userLogin({password, email})
     } else {
-      // This is the sign-up funciton since it takes name password and email.
       // Should we be clever and put a 'confirm password field'?
-      // // userSignUp(this.state)
       createUser(this.state);
+      this.backToHome()
     }
   };
+
+  backToHome = () => {
+    history.push('/')
+  }
 
   render() {
     return (
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
+            onClick={this.clearNameState}
             name='logIn'>
               Log In
           </button>
         </NavLink>
         <NavLink to='/login/sign-up'>
           <button
-            onClick={this.toggleNameField}
             name='signUp'>
               Sign Up
           </button>
