@@ -27,7 +27,6 @@ export class App extends Component {
   };
 
   toggleLogin = () => {
-    console.log('am i even happening?')
     const logIn = (
       <NavLink to="/login/" className="login">
         Login / Sign up

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
-import { Route, NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { Route, NavLink, Redirect } from 'react-router-dom';
 import { createUser, userLogin, getFavArray }  from '../../apiCall';
 import { getUser } from '../../actions'
 import './LoginForm.css';
@@ -13,11 +14,21 @@ export class LoginForm extends Component {
       name: '',
       password: '',
       email: '',
+      error: '' // This state is the words that will show in the error <h3>
     };
   }
 
-  clearNameState = () => {
+  handleLoginClick = () => {
+    this.clearName();
+    this.clearError();
+  }
+
+  clearName = () => {
     this.setState({name: ''})
+  }
+
+  clearError = () => {
+    this.setState({error: ''})
   }
 
   handleInputs = event => {
@@ -28,42 +39,65 @@ export class LoginForm extends Component {
   };
 
   handleSubmit = async event => {
-    const { name, password, email } = this.state
     event.preventDefault();
-    if (name === '') {
-      const user = await userLogin({password, email});
-      this.props.getUser(user)
-      
-    } else {
-      // Should we be clever and put a 'confirm password field'?
-      createUser(this.state);
-    }
-    this.backToHome()
+    const { name } = this.state
+    let createUserResponse;
+    if (name !== '') {
+      createUserResponse = await createUser(this.state); 
+    } 
+    this.handleSignUpError(createUserResponse) // First gate for errors
+    // this.props.history.push('/') <-- This is the other way to redirect
+    // Once we have error handling we'll see which we prefer to use
   };
 
-  backToHome = () => {
-    // Redirect user to homepage '/'
-    // history.push('/')
+  handleSignUpError = (response) => {
+    if (response && response.status !== 'success') {
+      const {error} = response
+      this.setState({error})
+    } else {
+      this.loginUser();
+    }
   }
+
+  loginUser = async () => {
+    const { password, email } = this.state
+    const userLoginResponse = await userLogin({password, email});
+    if (typeof(userLoginResponse) === 'string') {
+      this.setState({error: userLoginResponse})
+    } else { 
+      this.props.getUser(userLoginResponse)
+      this.props.history.push('/')
+    }
+  }
+
+
+
+  // backToHome = () => {
+  //   if(this.props.user.id) {
+  //     return <Redirect to='/' />
+  //   }
+  // }
 
   render() {
     return (
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
-            onClick={this.clearNameState}
+            onClick={this.handleLoginClick}
             name='logIn'>
               Log In
           </button>
         </NavLink>
         <NavLink to='/login/sign-up'>
           <button
+            onClick={this.clearError}
             name='signUp'>
               Sign Up
           </button>
         </NavLink>
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
+            <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
             <Route exact path='/login/sign-up' render={() => { 
               return(
                 <label>
@@ -100,15 +134,16 @@ export class LoginForm extends Component {
             <input type='submit' />
           </form>
         </article>
+        {/*{this.backToHome()}*/}
       </section>
     );
   }
 }
 
-export const mapStateToProps = store => ({});
+export const mapStateToProps = ({user}) => ({user});
 
 export const mapDispatchToProps = dispatch => ({
   getUser: user => dispatch(getUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm));
