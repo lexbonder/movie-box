@@ -66,6 +66,7 @@ export class LoginForm extends Component {
       this.setState({error: userLoginResponse});
     } else { 
       this.props.getUser(userLoginResponse);
+      localStorage.setItem('UserId', userLoginResponse.id);
       this.props.history.push('/');
     }
   }

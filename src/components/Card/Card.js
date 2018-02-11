@@ -12,7 +12,7 @@ export class Card extends Component {
     super()
     this.state = {
       favWithoutUser: false
-    }
+    };
   }
   
   handleFavClick = async (event, movie) => {
@@ -33,7 +33,7 @@ export class Card extends Component {
 
   render() {
     if (this.state.favWithoutUser === true) {
-        return <Redirect to='/login/' />
+      return <Redirect to='/login/' />;
     } else {
       const { movies } = this.props;
       const renderedMovies = movies.map((movie, index) => {
