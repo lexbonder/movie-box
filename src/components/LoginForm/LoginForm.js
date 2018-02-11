@@ -15,7 +15,7 @@ export class LoginForm extends Component {
       name: '',
       password: '',
       email: '',
-      error: '' // This state is the words that will show in the error <h3>
+      error: ''
     };
   }
 
@@ -41,19 +41,16 @@ export class LoginForm extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+    debugger;
     const { name, password, email } = this.state;
     let createUserResponse;
     if (name !== '') {
-      createUserResponse = await createUser({name, password, email});
-    }
+      createUserResponse = await createUser({name, password, email}) 
+    } 
     this.handleSignUpError(createUserResponse); // First gate for errors
   }
 
-  getUserResponse = async (userObject) => {
-    return await createUser(userObject)
-  }
-
-  handleSignUpError = response => {
+  handleSignUpError = (response) => {
     if (response && response.status !== 'success') {
       const error = 'E-mail already exists';
       this.setState({error});
@@ -101,8 +98,12 @@ export class LoginForm extends Component {
         </NavLink>
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
+<<<<<<< HEAD
             <h3>{message}</h3>
             <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
+=======
+            <h3 className='error-message'>{this.state.error}</h3>
+>>>>>>> Test reducer files appjs card js and login form
             <Route exact path='/login/sign-up' render={() => { 
               return (
                 <label> Name:

@@ -17,14 +17,14 @@ export class Card extends Component {
     };
   }
   
-  handleFavClick = async (event, movie) => {
+  handleFavClick = (event, movie) => {
     event.preventDefault();
     const { id } = this.props.user;
 
     id ? this.toggleFavorite(id, movie) : this.setState({favWithoutUser: true});
   };
 
-  toggleFavorite = async(id, movie) => {
+  toggleFavorite = async (id, movie) => {
     const currentFavs = await getFavArray(id);
     const favMovieIds = currentFavs.data.map(fav => fav.movie_id);
 

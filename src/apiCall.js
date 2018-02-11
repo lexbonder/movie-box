@@ -12,18 +12,18 @@ export const fetchApi = async () => {
   }
 };
 
-const cleanDate = date => {
+export const cleanDate = date => {
   const splitDate = date.split('-');
   return splitDate[0];
 };
 
-const cleanData = movieArray => {
+export const cleanData = movieArray => {
   return movieArray.map(movie => ({
     title: movie.title,
     vote_average: movie.vote_average,
     release_date: cleanDate(movie.release_date),
     overview: movie.overview,
-    poster_path: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+    poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
     movie_id: movie.id
   }));
 };

@@ -9,10 +9,6 @@ import Card from './components/Card/Card';
 import './App.css';
 
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
 
   componentDidMount = async () => {
     const moviesArray = await fetchApi();
@@ -24,13 +20,13 @@ export class App extends Component {
       const newFavArray = await getFavArray(localStorage.UserId);
       this.props.addFavArray(newFavArray.data);
     }
-  };
+  }
 
   sendMoviesToStore = moviesArray => {
     moviesArray.forEach(movie => {
       this.props.changeStore(movie);
     });
-  };
+  }
 
   handleLogout = () => {
     localStorage.removeItem('UserId');

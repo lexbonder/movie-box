@@ -76,17 +76,38 @@ describe('LoginForm', () => {
       expect(wrapper.instance().handleSignUpError).toHaveBeenCalled()
     })
 
-    // it.skip('passes the response from createUser to handleSignUpError if there is a name in state', () => {
-    //   const mockResponse = {}
-    //   wrapper.setState({name: 'a', email: 'a@a.com', password: 'a'})
+    it.skip('passes the response from createUser to handleSignUpError if there is a name in state', async () => {
+      wrapper.setState({name: 'a', email: 'a@a.com', password: 'a'})
+      
+      wrapper.createUser = async () => await {word: 'yo'}
 
-    //   wrapper.instance().getUserResponse()=>  {}
-    //   wrapper.instance().handleSubmit(mockEvent)
-    //   expect(wrapper.instance().handleSignUpError).toHaveBeenCalledWith(mockResponse)
-    // })
+      expect(wrapper.instance().handleSignUpError).toHaveBeenCalledWith({success: 'you rock'})
+    })
+  })
 
-    
+  describe('handleSignUpError', () => {
+    it('should set state as an error if the response is an error', () => {
+      const mockResponse = {status: 'error'}
+      wrapper.instance().handleSignUpError(mockResponse)
 
-    
+      expect(wrapper.state().error).toEqual('E-mail already exists')
+    })
+
+    it('should call loginUser if the response is successful', () => {
+      const mockResponse = {status: 'success'}
+      wrapper.instance().loginUser = jest.fn()
+      wrapper.instance().handleSignUpError(mockResponse)
+
+      expect(wrapper.instance().loginUser).toHaveBeenCalled()
+    })
+  })
+
+  describe('loginUser', () => {
+    it.skip('should set an error message in state if email and password dont match', () => {
+      const mockParams = {password: 'a', email: 'a@a.com'}
+      wrapper.userLogin = async (mockParams) => await {object: 'stuff'}
+
+      expect(wrapper.state().error).toEqual('hello')
+    })
   })
 })
