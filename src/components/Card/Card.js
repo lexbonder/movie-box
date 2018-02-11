@@ -3,15 +3,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addFavorite, getFavArray, removeFavorite } from '../../apiCall';
 import './Card.css';
+import { addFavArray } from '../../actions/';
 import { LoginForm } from '../LoginForm/LoginForm';
 import { Route, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 export class Card extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      favWithoutUser: false
+      favWithoutUser: false,
+      userFavorites: []
     };
   }
   
@@ -19,7 +21,7 @@ export class Card extends Component {
     event.preventDefault();
     const { id } = this.props.user;
 
-    id ? this.toggleFavorite(id, movie) : this.setState({favWithoutUser: true})
+    id ? this.toggleFavorite(id, movie) : this.setState({favWithoutUser: true});
   };
 
   toggleFavorite = async(id, movie) => {
@@ -27,8 +29,11 @@ export class Card extends Component {
     const favMovieIds = currentFavs.data.map(fav => fav.movie_id);
 
     favMovieIds.includes(movie.movie_id)
-      ? removeFavorite(movie.movie_id, id)
-      : addFavorite({ ...movie, user_id: id });
+      ? await removeFavorite(movie.movie_id, id)
+      : await addFavorite({ ...movie, user_id: id });
+    const updatedFavs = await getFavArray(id);
+    this.props.addFavArray(updatedFavs.data);
+
   }
 
   render() {
@@ -38,7 +43,18 @@ export class Card extends Component {
                               state: {needLogin: true}
                             }} />
     } else {
-      const { movies } = this.props;
+      //console.log(this.props.match);
+      
+      let movies;
+
+      if (this.props.match.path === '/' ){
+        console.log('paths are matching!');
+        movies = this.props.movies;
+      } else if (this.props.match.path === '/favorites'){ 
+        movies = this.props.favorites;
+      }
+
+      //const { movies } = this.props
       const renderedMovies = movies.map((movie, index) => {
         return (
           <div className="Card flip-container" key={index}>
@@ -69,19 +85,36 @@ export class Card extends Component {
       });
       return <div className="cardWrapper">{renderedMovies}</div>;
     }
+    // <Route
+    //           exact
+    //           path="/favorites"
+    //           render={() => {
+    //             return (
+    //               <label>
+    //                 <input
+    //                   required
+    //                   className={this.state.toggleName}
+    //                   name="name"
+    //                   value={this.state.name}
+    //                   type="text"
+    //                   onChange={this.handleInputs}
+    //                   placeholder="Your Name"
+    //                 />
+    //               </label>
+    //             );
+    //           }}
+    //         />
   }
 }
 
 export const mapStateToProps = store => ({
   movies: store.movies,
-  user: store.user
-  //favorites: store.favorites
+  user: store.user,
+  favorites: store.favorites
 });
 
-// export const mapDispatchToProps = dispatch => ({
-  // toggleFavorites: id => dispatch(toggleFavorite(id)),
-  // addToFavorites: movie => dispatch(addFavorite(movie)),
-  // removeFavorite: movie => dispatch(removeFavorite(movie))
-// });
+export const mapDispatchToProps = dispatch => ({
+  addFavArray: newFavArray => dispatch(addFavArray(newFavArray))
+});
 
-export default connect(mapStateToProps, null)(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
