@@ -1,3 +1,4 @@
+/* eslint-disable */
 import todosReducer, { movieReducer } from './movieReducer';
 import * as actions from '../actions';
 

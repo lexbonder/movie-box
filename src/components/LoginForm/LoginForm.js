@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 // import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Route, NavLink, Redirect } from 'react-router-dom';
-import { createUser, userLogin, getFavArray }  from '../../apiCall';
-import { getUser } from '../../actions'
+import { Route, NavLink } from 'react-router-dom';
+import { createUser, userLogin }  from '../../apiCall';
+import { getUser } from '../../actions';
 import './LoginForm.css';
 
 export class LoginForm extends Component {
@@ -24,11 +24,11 @@ export class LoginForm extends Component {
   }
 
   clearName = () => {
-    this.setState({name: ''})
+    this.setState({name: ''});
   }
 
   clearError = () => {
-    this.setState({error: ''})
+    this.setState({error: ''});
   }
 
   handleInputs = event => {
@@ -40,33 +40,33 @@ export class LoginForm extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    const { name } = this.state
+    const { name } = this.state;
     let createUserResponse;
     if (name !== '') {
       createUserResponse = await createUser(this.state); 
     } 
-    this.handleSignUpError(createUserResponse) // First gate for errors
+    this.handleSignUpError(createUserResponse); // First gate for errors
     // this.props.history.push('/') <-- This is the other way to redirect
     // Once we have error handling we'll see which we prefer to use
   };
 
   handleSignUpError = (response) => {
     if (response && response.status !== 'success') {
-      const {error} = response
-      this.setState({error})
+      const {error} = response;
+      this.setState({error});
     } else {
       this.loginUser();
     }
   }
 
   loginUser = async () => {
-    const { password, email } = this.state
+    const { password, email } = this.state;
     const userLoginResponse = await userLogin({password, email});
     if (typeof(userLoginResponse) === 'string') {
-      this.setState({error: userLoginResponse})
+      this.setState({error: userLoginResponse});
     } else { 
-      this.props.getUser(userLoginResponse)
-      this.props.history.push('/')
+      this.props.getUser(userLoginResponse);
+      this.props.history.push('/');
     }
   }
 
@@ -97,9 +97,10 @@ export class LoginForm extends Component {
         </NavLink>
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
-            <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
+            {/* This is where the error message conmes up*/}
+            <h3>{this.state.error}</h3>
             <Route exact path='/login/sign-up' render={() => { 
-              return(
+              return (
                 <label>
                   <input required
                     className={this.state.toggleName}
@@ -110,7 +111,7 @@ export class LoginForm extends Component {
                     placeholder='Your Name'
                   />
                 </label>
-              )
+              );
             }} />
             <label>
               <input required
