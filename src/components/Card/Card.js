@@ -33,7 +33,10 @@ export class Card extends Component {
 
   render() {
     if (this.state.favWithoutUser === true) {
-        return <Redirect to='/login/' />
+        return <Redirect to={{
+                              pathname:'/login/',
+                              state: {needLogin: true}
+                            }} />
     } else {
       const { movies } = this.props;
       const renderedMovies = movies.map((movie, index) => {
