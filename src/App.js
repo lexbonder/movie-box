@@ -32,7 +32,7 @@ export class App extends Component {
   };
 
   handleLogout = () => {
-    localStorage.removeItem(this.props.user.name);
+    localStorage.removeItem('UserId');
     this.props.logOut();
   }
 
