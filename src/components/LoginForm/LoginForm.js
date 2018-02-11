@@ -6,6 +6,7 @@ import { Route, NavLink } from 'react-router-dom';
 import { createUser, userLogin } from '../../apiCall';
 import { getUser } from '../../actions';
 import './LoginForm.css';
+import { log } from 'util';
 
 export class LoginForm extends Component {
   constructor() {
@@ -75,6 +76,11 @@ export class LoginForm extends Component {
   }
 
   render() {
+    let message;
+
+    if (this.props.history.location.state) {
+      message = 'Please login or sign up to favorite a movie';
+    }
     return (
       <section className='login-wrap'>
         <NavLink to='/login/'>
@@ -95,8 +101,8 @@ export class LoginForm extends Component {
         </NavLink>
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
-            {/* This is where the error message conmes up*/}
-            <h3 className='error-message'>{this.state.error}</h3>
+            <h3>{message}</h3>
+            <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
             <Route exact path='/login/sign-up' render={() => { 
               return (
                 <label> Name:
