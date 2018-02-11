@@ -10,8 +10,21 @@ article {
 }
 
 button {
+  font-size: 22px;
   width: 150px;
   height: 40px;
+}
+
+a {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  font-size: 22px;
+}
+
+.sign-up-button.active,
+.login-button.active {
+  background-color: blue;
 }
 
 input {
@@ -21,6 +34,8 @@ input {
   padding: 10px;
 }
 
-h3 {
+
+.error-message {
+  margin: 0;
   color: red;
 }

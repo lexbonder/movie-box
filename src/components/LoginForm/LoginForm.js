@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Route, NavLink } from 'react-router-dom';
-import { createUser, userLogin }  from '../../apiCall';
+import { createUser, userLogin } from '../../apiCall';
 import { getUser } from '../../actions';
 import './LoginForm.css';
 
@@ -36,23 +36,26 @@ export class LoginForm extends Component {
     this.setState({
       [name]: value
     });
-  };
+  }
 
   handleSubmit = async event => {
     event.preventDefault();
-    const { name } = this.state;
+    const { name, password, email } = this.state;
     let createUserResponse;
     if (name !== '') {
-      createUserResponse = await createUser(this.state); 
+      createUserResponse = await this.getUserResponse({name, email, password}); 
     } 
+    debugger;
     this.handleSignUpError(createUserResponse); // First gate for errors
-    // this.props.history.push('/') <-- This is the other way to redirect
-    // Once we have error handling we'll see which we prefer to use
-  };
+  }
+
+  getUserResponse = async (userObject) => {
+    return await createUser(userObject)
+  }
 
   handleSignUpError = (response) => {
     if (response && response.status !== 'success') {
-      const {error} = response;
+      const error = 'E-mail already exists';
       this.setState({error});
     } else {
       this.loginUser();
@@ -71,19 +74,12 @@ export class LoginForm extends Component {
     }
   }
 
-
-
-  // backToHome = () => {
-  //   if(this.props.user.id) {
-  //     return <Redirect to='/' />
-  //   }
-  // }
-
   render() {
     return (
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
+            className={`login-button ${this.state.loginClicked}`}
             onClick={this.handleLoginClick}
             name='logIn'>
               Log In
@@ -91,6 +87,7 @@ export class LoginForm extends Component {
         </NavLink>
         <NavLink to='/login/sign-up'>
           <button
+            className={`sign-up-button ${this.state.signUpClicked}`}
             onClick={this.clearError}
             name='signUp'>
               Sign Up
@@ -99,10 +96,10 @@ export class LoginForm extends Component {
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
             {/* This is where the error message conmes up*/}
-            <h3>{this.state.error}</h3>
+            <h3 className='error-message'>{this.state.error}</h3>
             <Route exact path='/login/sign-up' render={() => { 
               return (
-                <label>
+                <label> Name:
                   <input required
                     className={this.state.toggleName}
                     name="name"
@@ -114,7 +111,7 @@ export class LoginForm extends Component {
                 </label>
               );
             }} />
-            <label>
+            <label> E-mail:
               <input required
                 name="email"
                 value={this.state.email}
@@ -124,7 +121,7 @@ export class LoginForm extends Component {
               />
             </label>
             <br />
-            <label>
+            <label> Password:
               <input required
                 name="password"
                 value={this.state.password}
@@ -136,7 +133,6 @@ export class LoginForm extends Component {
             <input type='submit' />
           </form>
         </article>
-        {/*{this.backToHome()}*/}
       </section>
     );
   }
