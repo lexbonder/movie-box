@@ -1,6 +1,6 @@
 /* eslint-disable */
-import todosReducer, { movieReducer } from './movieReducer';
-import * as actions from '../actions';
+import todosReducer, { movieReducer } from '../movieReducer';
+import * as actions from '../../actions';
 
 describe('movieReducer', () => {
 
@@ -31,7 +31,7 @@ describe('movieReducer', () => {
             id: 4
         }
         const expected = [{...movie, favorite: true}];
-        expect(movieReducer(undefined, actions.toggleFavorite(id))).toEqual(expected);
+        expect(movieReducer([movie], actions.toggleFavorite(id))).toEqual(expected);
     });
 
 });
