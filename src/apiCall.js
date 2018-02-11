@@ -1,6 +1,6 @@
 import apiKey from './apiKey.js';
 
-const fetchApi = async () => {
+export const fetchApi = async () => {
   try {
     const initalFetch = await fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
@@ -46,6 +46,17 @@ export const createUser = async (userInfo) => {
   }
 };
 
+export const returningUser = async (id) => {
+  
+  try {
+    const reply = await fetch('/api/users');
+    const allUsersArray = await reply.json();
+    return allUsersArray.data.find( user => user.id === parseInt(id));
+  } catch (returningUserError) {
+    return 'Network Error';
+  }
+};
+
 export const userLogin = async ({password, email}) => {
   try {
     const reply = await fetch('/api/users')
@@ -57,7 +68,7 @@ export const userLogin = async ({password, email}) => {
       return currentUser
     }
   } catch (loginError) {
-    return 'It are broked'
+    return 'It are broked';
   }
 };
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import fetchApi from './apiCall.js';
+import { fetchApi, returningUser } from './apiCall.js';
 import { connect } from 'react-redux';
-import { addMovie, logOut } from './actions';
+import { addMovie, logOut, getUser } from './actions';
 import { Route, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import LoginForm from './components/LoginForm/LoginForm';
@@ -18,6 +18,11 @@ export class App extends Component {
   componentDidMount = async () => {
     const moviesArray = await fetchApi();
     this.sendMoviesToStore(moviesArray);
+
+    if (localStorage.UserId){
+      const loggedIn = await returningUser(localStorage.UserId);
+      this.props.getUser(loggedIn);  
+    }
   };
 
   sendMoviesToStore = moviesArray => {
@@ -25,6 +30,11 @@ export class App extends Component {
       this.props.changeStore(movie);
     });
   };
+
+  handleLogout = () => {
+    localStorage.removeItem(this.props.user.name);
+    this.props.logOut();
+  }
 
   toggleLogin = () => {
     const logIn = (
@@ -35,7 +45,7 @@ export class App extends Component {
     const logOut =(
       <div className='log-out login'>
         <h1> Welcome, {this.props.user.name}!</h1>
-        <a href='#' onClick={this.props.logOut}>
+        <a href='#' onClick={this.handleLogout}>
           Log Out
         </a>
         <h1>View Favs</h1>
@@ -66,7 +76,8 @@ export const mapStateToProps = ({user}) => ({user})
 
 export const mapDispatchToProps = dispatch => ({
   changeStore: movie => dispatch(addMovie(movie)),
-  logOut: () => dispatch(logOut())
+  logOut: () => dispatch(logOut()),
+  getUser: user => dispatch(getUser(user))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
