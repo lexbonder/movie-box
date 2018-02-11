@@ -3,21 +3,44 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addFavorite, getFavArray, removeFavorite } from '../../apiCall';
 import './Card.css';
+import { LoginForm } from '../LoginForm/LoginForm';
 
 export class Card extends Component {
+  constructor() {
+    super()
+    this.state = {
+      favWithoutUser: false
+    }
+  }
   
   toggleFavorite = async (event, movie) => {
     event.preventDefault();
     const { id } = this.props.user;
-    const currentFavs = await getFavArray(id);
-    const newFav = { ...movie, user_id: id };
-    const favMovieIds = currentFavs.data.map(fav => fav.movie_id);
-    favMovieIds.includes(movie.movie_id)
-      ? removeFavorite(movie.movie_id, id)
-      : addFavorite(newFav);
+    
+    if (id) {   
+      const currentFavs = await getFavArray(id);
+      const newFav = { ...movie, user_id: id };
+      const favMovieIds = currentFavs.data.map(fav => fav.movie_id);
+      favMovieIds.includes(movie.movie_id)
+        ? removeFavorite(movie.movie_id, id)
+        : addFavorite(newFav);
+    } else {
+      this.setState({favWithoutUser: true})
+    } 
+    console.log(this.state.favWithoutUser)
   };
 
   render() {
+    
+      if(this.state.favWithoutUser === true){
+        return (
+          <div>
+            <h3 className='please-login'>You must login in order to favorite a movie.</h3>
+            <LoginForm />
+          </div>
+        )
+      } else {
+    
     const { movies } = this.props;
     const renderedMovies = movies.map((movie, index) => {
       return (
@@ -49,6 +72,7 @@ export class Card extends Component {
     });
     return <div className="cardWrapper">{renderedMovies}</div>;
   }
+}
 }
 
 export const mapStateToProps = store => ({
