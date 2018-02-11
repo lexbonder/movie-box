@@ -37,20 +37,12 @@ export const createUser = async userInfo => {
         'Content-Type': 'application/json'
       }
     });
-<<<<<<< HEAD
     const returnedObject = await reply.json()
     return returnedObject
     // -- Trying to get user object
   } catch (createUserError) {
     createUserError = new Error('Add user is broken');
     return createUserError;
-=======
-    const returnedObject = await reply.json();
-    return returnedObject;
-  } catch (error) {
-    const error = new Error('Add user is broken');
-    return error;
->>>>>>> Update favs functionality
   }
 };
 
@@ -86,16 +78,10 @@ export const getFavArray = async id => {
     const reply = await fetch(`/api/users/${id}/favorites/`);
     const returnedObject = await reply.json();
     return returnedObject;
-<<<<<<< HEAD
     
   } catch (getFavArrayError) {
     getFavArrayError = new Error('GET favorites is broken');
     return getFavArrayError;
-=======
-  } catch (error) {
-    const error = new Error('GET favorites is broken');
-    return error;
->>>>>>> Update favs functionality
   }
 };
 

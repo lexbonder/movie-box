@@ -44,14 +44,8 @@ export class LoginForm extends Component {
     const { name, password, email } = this.state;
     let createUserResponse;
     if (name !== '') {
-<<<<<<< HEAD
-      createUserResponse = await this.getUserResponse({name, email, password}); 
-    } 
-    debugger;
-=======
-      createUserResponse = await createUser(this.state);
+      createUserResponse = await createUser({name, password, email});
     }
->>>>>>> Update favs functionality
     this.handleSignUpError(createUserResponse); // First gate for errors
   }
 
@@ -61,13 +55,8 @@ export class LoginForm extends Component {
 
   handleSignUpError = response => {
     if (response && response.status !== 'success') {
-<<<<<<< HEAD
       const error = 'E-mail already exists';
       this.setState({error});
-=======
-      const { error } = response;
-      this.setState({ error });
->>>>>>> Update favs functionality
     } else {
       this.loginUser();
     }
@@ -83,17 +72,8 @@ export class LoginForm extends Component {
       localStorage.setItem('UserId', userLoginResponse.id);
       this.props.history.push('/');
     }
-<<<<<<< HEAD
-  }
-=======
   };
 
-  // backToHome = () => {
-  //   if(this.props.user.id) {
-  //     return <Redirect to='/' />
-  //   }
-  // }
->>>>>>> Update favs functionality
 
   render() {
     let message;
@@ -102,7 +82,6 @@ export class LoginForm extends Component {
       message = 'Please login or sign up to favorite a movie';
     }
     return (
-<<<<<<< HEAD
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
@@ -118,22 +97,10 @@ export class LoginForm extends Component {
             onClick={this.clearError}
             name='signUp'>
               Sign Up
-=======
-      <section className="login-wrap">
-        <NavLink to="/login/">
-          <button onClick={this.handleLoginClick} name="logIn">
-            Log In
-          </button>
-        </NavLink>
-        <NavLink to="/login/sign-up">
-          <button onClick={this.clearError} name="signUp">
-            Sign Up
->>>>>>> Update favs functionality
           </button>
         </NavLink>
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
-<<<<<<< HEAD
             <h3>{message}</h3>
             <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
             <Route exact path='/login/sign-up' render={() => { 
@@ -152,32 +119,6 @@ export class LoginForm extends Component {
             }} />
             <label> E-mail:
               <input required
-=======
-            {/* This is where the error message conmes up*/}
-            <h3>{this.state.error}</h3>
-            <Route
-              exact
-              path="/login/sign-up"
-              render={() => {
-                return (
-                  <label>
-                    <input
-                      required
-                      className={this.state.toggleName}
-                      name="name"
-                      value={this.state.name}
-                      type="text"
-                      onChange={this.handleInputs}
-                      placeholder="Your Name"
-                    />
-                  </label>
-                );
-              }}
-            />
-            <label>
-              <input
-                required
->>>>>>> Update favs functionality
                 name="email"
                 value={this.state.email}
                 type="email"
@@ -186,14 +127,8 @@ export class LoginForm extends Component {
               />
             </label>
             <br />
-<<<<<<< HEAD
             <label> Password:
               <input required
-=======
-            <label>
-              <input
-                required
->>>>>>> Update favs functionality
                 name="password"
                 value={this.state.password}
                 type="password"
