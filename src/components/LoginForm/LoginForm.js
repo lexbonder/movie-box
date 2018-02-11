@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 // import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Route, NavLink, Redirect } from 'react-router-dom';
-import { createUser, userLogin, getFavArray }  from '../../apiCall';
-import { getUser } from '../../actions'
+import { Route, NavLink } from 'react-router-dom';
+import { createUser, userLogin } from '../../apiCall';
+import { getUser } from '../../actions';
 import './LoginForm.css';
 import { log } from 'util';
 
@@ -25,11 +25,11 @@ export class LoginForm extends Component {
   }
 
   clearName = () => {
-    this.setState({name: ''})
+    this.setState({name: ''});
   }
 
   clearError = () => {
-    this.setState({error: ''})
+    this.setState({error: ''});
   }
 
   handleInputs = event => {
@@ -37,47 +37,43 @@ export class LoginForm extends Component {
     this.setState({
       [name]: value
     });
-  };
+  }
 
   handleSubmit = async event => {
     event.preventDefault();
-    const { name } = this.state
+    const { name, password, email } = this.state;
     let createUserResponse;
     if (name !== '') {
-      createUserResponse = await createUser(this.state); 
+      createUserResponse = await this.getUserResponse({name, email, password}); 
     } 
-    this.handleSignUpError(createUserResponse) // First gate for errors
-    // this.props.history.push('/') <-- This is the other way to redirect
-    // Once we have error handling we'll see which we prefer to use
-  };
+    debugger;
+    this.handleSignUpError(createUserResponse); // First gate for errors
+  }
+
+  getUserResponse = async (userObject) => {
+    return await createUser(userObject)
+  }
 
   handleSignUpError = (response) => {
     if (response && response.status !== 'success') {
-      const {error} = response
-      this.setState({error})
+      const error = 'E-mail already exists';
+      this.setState({error});
     } else {
       this.loginUser();
     }
   }
 
   loginUser = async () => {
-    const { password, email } = this.state
+    const { password, email } = this.state;
     const userLoginResponse = await userLogin({password, email});
     if (typeof(userLoginResponse) === 'string') {
-      this.setState({error: userLoginResponse})
+      this.setState({error: userLoginResponse});
     } else { 
-      this.props.getUser(userLoginResponse)
-      this.props.history.push('/')
+      this.props.getUser(userLoginResponse);
+      localStorage.setItem('UserId', userLoginResponse.id);
+      this.props.history.push('/');
     }
   }
-
-
-
-  // backToHome = () => {
-  //   if(this.props.user.id) {
-  //     return <Redirect to='/' />
-  //   }
-  // }
 
   render() {
     let message;
@@ -89,6 +85,7 @@ export class LoginForm extends Component {
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
+            className={`login-button ${this.state.loginClicked}`}
             onClick={this.handleLoginClick}
             name='logIn'>
               Log In
@@ -96,6 +93,7 @@ export class LoginForm extends Component {
         </NavLink>
         <NavLink to='/login/sign-up'>
           <button
+            className={`sign-up-button ${this.state.signUpClicked}`}
             onClick={this.clearError}
             name='signUp'>
               Sign Up
@@ -106,8 +104,8 @@ export class LoginForm extends Component {
             <h3>{message}</h3>
             <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
             <Route exact path='/login/sign-up' render={() => { 
-              return(
-                <label>
+              return (
+                <label> Name:
                   <input required
                     className={this.state.toggleName}
                     name="name"
@@ -117,9 +115,9 @@ export class LoginForm extends Component {
                     placeholder='Your Name'
                   />
                 </label>
-              )
+              );
             }} />
-            <label>
+            <label> E-mail:
               <input required
                 name="email"
                 value={this.state.email}
@@ -129,7 +127,7 @@ export class LoginForm extends Component {
               />
             </label>
             <br />
-            <label>
+            <label> Password:
               <input required
                 name="password"
                 value={this.state.password}
@@ -141,7 +139,6 @@ export class LoginForm extends Component {
             <input type='submit' />
           </form>
         </article>
-        {/*{this.backToHome()}*/}
       </section>
     );
   }

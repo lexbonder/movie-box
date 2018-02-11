@@ -12,7 +12,7 @@ export class Card extends Component {
     super()
     this.state = {
       favWithoutUser: false
-    }
+    };
   }
   
   handleFavClick = async (event, movie) => {
@@ -78,10 +78,10 @@ export const mapStateToProps = store => ({
   //favorites: store.favorites
 });
 
-export const mapDispatchToProps = dispatch => ({
+// export const mapDispatchToProps = dispatch => ({
   // toggleFavorites: id => dispatch(toggleFavorite(id)),
   // addToFavorites: movie => dispatch(addFavorite(movie)),
   // removeFavorite: movie => dispatch(removeFavorite(movie))
-});
+// });
 
 export default connect(mapStateToProps, null)(Card);
