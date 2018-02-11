@@ -4,8 +4,12 @@ import { LoginForm } from './LoginForm';
 
 describe('LoginForm', () => {
   let wrapper;
+  let mockUser;
+  let mockHistory;
   beforeEach(() => {
-    wrapper = shallow(<LoginForm />)
+    mockHistory = {location: {state: ''}}
+    mockUser = {id: 1, name:'bob'}
+    wrapper = shallow(<LoginForm user={mockUser} history={mockHistory} />)
   })
 
   it('should match the snapshot when the login button is clicked', () => {

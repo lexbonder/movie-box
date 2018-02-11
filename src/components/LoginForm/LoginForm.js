@@ -98,12 +98,8 @@ export class LoginForm extends Component {
         </NavLink>
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
-<<<<<<< HEAD
-            <h3>{message}</h3>
-            <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
-=======
+            <h3 className='error-message'>{message}</h3>
             <h3 className='error-message'>{this.state.error}</h3>
->>>>>>> Test reducer files appjs card js and login form
             <Route exact path='/login/sign-up' render={() => { 
               return (
                 <label> Name:

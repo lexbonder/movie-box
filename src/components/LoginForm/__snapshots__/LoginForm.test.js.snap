@@ -4,7 +4,21 @@ exports[`LoginForm should match the snapshot when the login button is clicked 1`
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LoginForm />,
+  Symbol(enzyme.__unrendered__): <LoginForm
+    history={
+      Object {
+        "location": Object {
+          "state": "",
+        },
+      }
+    }
+    user={
+      Object {
+        "id": 1,
+        "name": "bob",
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -50,6 +64,9 @@ ShallowWrapper {
           <form
             onSubmit={[Function]}
           >
+            <h3
+              className="error-message"
+            />
             <h3
               className="error-message"
             >
@@ -169,6 +186,9 @@ ShallowWrapper {
           >
             <h3
               className="error-message"
+            />
+            <h3
+              className="error-message"
             >
               
             </h3>
@@ -215,6 +235,9 @@ ShallowWrapper {
             "children": Array [
               <h3
                 className="error-message"
+              />,
+              <h3
+                className="error-message"
               >
                 
               </h3>,
@@ -254,6 +277,18 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "error-message",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h3",
+            },
             Object {
               "instance": null,
               "key": undefined,
@@ -426,6 +461,9 @@ ShallowWrapper {
             >
               <h3
                 className="error-message"
+              />
+              <h3
+                className="error-message"
               >
                 
               </h3>
@@ -543,6 +581,9 @@ ShallowWrapper {
             >
               <h3
                 className="error-message"
+              />
+              <h3
+                className="error-message"
               >
                 
               </h3>
@@ -589,6 +630,9 @@ ShallowWrapper {
               "children": Array [
                 <h3
                   className="error-message"
+                />,
+                <h3
+                  className="error-message"
                 >
                   
                 </h3>,
@@ -628,6 +672,18 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "error-message",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h3",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -775,7 +831,21 @@ exports[`LoginForm should match the snapshot when the signUp button is clicked 1
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LoginForm />,
+  Symbol(enzyme.__unrendered__): <LoginForm
+    history={
+      Object {
+        "location": Object {
+          "state": "",
+        },
+      }
+    }
+    user={
+      Object {
+        "id": 1,
+        "name": "bob",
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -821,6 +891,9 @@ ShallowWrapper {
           <form
             onSubmit={[Function]}
           >
+            <h3
+              className="error-message"
+            />
             <h3
               className="error-message"
             >
@@ -940,6 +1013,9 @@ ShallowWrapper {
           >
             <h3
               className="error-message"
+            />
+            <h3
+              className="error-message"
             >
               
             </h3>
@@ -986,6 +1062,9 @@ ShallowWrapper {
             "children": Array [
               <h3
                 className="error-message"
+              />,
+              <h3
+                className="error-message"
               >
                 
               </h3>,
@@ -1025,6 +1104,18 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "error-message",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h3",
+            },
             Object {
               "instance": null,
               "key": undefined,
@@ -1197,6 +1288,9 @@ ShallowWrapper {
             >
               <h3
                 className="error-message"
+              />
+              <h3
+                className="error-message"
               >
                 
               </h3>
@@ -1314,6 +1408,9 @@ ShallowWrapper {
             >
               <h3
                 className="error-message"
+              />
+              <h3
+                className="error-message"
               >
                 
               </h3>
@@ -1360,6 +1457,9 @@ ShallowWrapper {
               "children": Array [
                 <h3
                   className="error-message"
+                />,
+                <h3
+                  className="error-message"
                 >
                   
                 </h3>,
@@ -1399,6 +1499,18 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "error-message",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h3",
+              },
               Object {
                 "instance": null,
                 "key": undefined,

@@ -45,6 +45,11 @@ ShallowWrapper {
         <Route
           component={[Function]}
           exact={true}
+          path="/favorites"
+        />,
+        <Route
+          component={[Function]}
+          exact={true}
           path="/"
         />,
         <Route
@@ -123,6 +128,19 @@ ShallowWrapper {
         "props": Object {
           "component": [Function],
           "exact": true,
+          "path": "/favorites",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
           "path": "/",
         },
         "ref": null,
@@ -170,6 +188,11 @@ ShallowWrapper {
               Login / Sign up
             </NavLink>
           </header>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/favorites"
+          />,
           <Route
             component={[Function]}
             exact={true}
@@ -243,6 +266,19 @@ ShallowWrapper {
             },
           ],
           "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/favorites",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
         Object {
           "instance": null,
@@ -330,6 +366,11 @@ ShallowWrapper {
         <Route
           component={[Function]}
           exact={true}
+          path="/favorites"
+        />,
+        <Route
+          component={[Function]}
+          exact={true}
           path="/"
         />,
         <Route
@@ -408,6 +449,19 @@ ShallowWrapper {
         "props": Object {
           "component": [Function],
           "exact": true,
+          "path": "/favorites",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
           "path": "/",
         },
         "ref": null,
@@ -455,6 +509,11 @@ ShallowWrapper {
               Login / Sign up
             </NavLink>
           </header>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/favorites"
+          />,
           <Route
             component={[Function]}
             exact={true}
@@ -528,6 +587,19 @@ ShallowWrapper {
             },
           ],
           "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/favorites",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
         Object {
           "instance": null,

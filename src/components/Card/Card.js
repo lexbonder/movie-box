@@ -48,13 +48,12 @@ export class Card extends Component {
       let movies;
 
       if (this.props.match.path === '/' ){
-        console.log('paths are matching!');
         movies = this.props.movies;
       } else if (this.props.match.path === '/favorites'){ 
         movies = this.props.favorites;
       }
 
-      //const { movies } = this.props
+      // const { movies } = this.props
       const renderedMovies = movies.map((movie, index) => {
         return (
           <div className="Card flip-container" key={index}>

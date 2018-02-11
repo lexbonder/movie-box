@@ -6,8 +6,10 @@ describe('Card', () => {
   let mockMovieArray;
   let mockUser;
   let mockMovie;
+  let mockMatch;
 
   beforeEach(() => {
+    mockMatch = {path: '/'};
     mockMovieArray = [
       {
         title: "The Maze Runner",
@@ -27,8 +29,8 @@ describe('Card', () => {
         movie_id: 211672,
         favorite: false
       }
-    ]
-    mockUser = {id: 1, name:'Bob'}
+    ];
+    mockUser = {id: 1, name:'Bob'};
     mockMovie = {
       title: "Minions",
       vote_average: 6.4,
@@ -41,14 +43,14 @@ describe('Card', () => {
   })
 
   it('Should match the snapshot', () => {
-    const wrapper = shallow(<Card movies={mockMovieArray} />)
+    const wrapper = shallow(<Card movies={mockMovieArray} match={mockMatch} />)
 
     expect(wrapper).toMatchSnapshot()
   })
 
   it('should have default state', () => {
-    const wrapper = shallow(<Card movies={mockMovieArray} />)
-    const expectedState = {favWithoutUser: false}
+    const wrapper = shallow(<Card movies={mockMovieArray} match={mockMatch} />)
+    const expectedState = {favWithoutUser: false, userFavorites: []}
 
     expect(wrapper.state()).toEqual(expectedState)
   })
@@ -56,7 +58,7 @@ describe('Card', () => {
   describe('handleFavClick', () => {
     it('should call toggle favorite if a user is logged in', () => {
       const mockEvent = {preventDefault: jest.fn()}
-      const wrapper = shallow(<Card movies={mockMovieArray} user={mockUser} />)
+      const wrapper = shallow(<Card movies={mockMovieArray} user={mockUser} match={mockMatch} />)
       wrapper.instance().toggleFavorite = jest.fn()
 
       wrapper.instance().handleFavClick(mockEvent, mockMovie)
@@ -66,7 +68,7 @@ describe('Card', () => {
 
     it('should change the state if a user is not logged in', () => {
       const mockEvent = {preventDefault: jest.fn()}
-      const wrapper = shallow(<Card movies={mockMovieArray} user={{undefined}}/>)
+      const wrapper = shallow(<Card movies={mockMovieArray} user={{undefined}} match={mockMatch} />)
 
       wrapper.instance().handleFavClick(mockEvent, mockMovie)
 
