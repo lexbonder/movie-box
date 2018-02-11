@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { fetchApi, returningUser } from './apiCall.js';
+import { fetchApi, returningUser, getFavArray } from './apiCall.js';
 import { connect } from 'react-redux';
-import { addMovie, logOut, getUser } from './actions';
+import { addMovie, logOut, getUser, addFavArray } from './actions';
 import { Route, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import LoginForm from './components/LoginForm/LoginForm';
 import Card from './components/Card/Card';
-import Favorites from './components/Favorites/Favorites';
 import './App.css';
 
 export class App extends Component {
@@ -21,7 +20,9 @@ export class App extends Component {
 
     if (localStorage.UserId){
       const loggedIn = await returningUser(localStorage.UserId);
-      this.props.getUser(loggedIn);  
+      this.props.getUser(loggedIn); 
+      const newFavArray = await getFavArray(localStorage.UserId);
+      this.props.addFavArray(newFavArray.data);
     }
   };
 
@@ -48,7 +49,9 @@ export class App extends Component {
         <a href='#' onClick={this.handleLogout}>
           Log Out
         </a>
-        <h1>View Favs</h1>
+        <NavLink to="/favorites">
+          View Favorites
+        </NavLink>
       </div>
     )
     return !this.props.user.id ? logIn : logOut
@@ -62,9 +65,8 @@ export class App extends Component {
             Movie Tracker Beyotch
           </NavLink>
           {this.toggleLogin()}
-          {/*<NavLink to='/favorites' className='nav'>Favorites</NavLink>*/}
         </header>
-        {/* <Route exact path='/favorites' component={Favorites} /> */}
+        <Route exact path='/favorites' component={Card} />
         <Route exact path="/" component={Card} />
         <Route strict path="/login/" component={LoginForm} />
       </section>
@@ -72,12 +74,16 @@ export class App extends Component {
   }
 }
 
-export const mapStateToProps = ({user}) => ({user})
+export const mapStateToProps = store => ({
+  user: store.user,
+  newFavArray: store.newFavArray  
+})
 
 export const mapDispatchToProps = dispatch => ({
   changeStore: movie => dispatch(addMovie(movie)),
   logOut: () => dispatch(logOut()),
-  getUser: user => dispatch(getUser(user))
+  getUser: user => dispatch(getUser(user)),
+  addFavArray: newFavArray => dispatch(addFavArray(newFavArray))
 });
 
 App.defaultProps = {user: {name: ''}}

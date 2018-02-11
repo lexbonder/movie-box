@@ -12,9 +12,9 @@ export const toggleFavorite = id => ({
   id
 });
 
-export const addFavorite = movie => ({
+export const addFavArray = movies => ({
   type: 'ADD_FAVORITE',
-  movie
+  movies
 });
 
 export const removeFavorite = movie => ({

@@ -1,42 +1,28 @@
-// import React, { Component } from "react";
-// import { connect } from "react-redux";
-// import { toggleFavorite } from "../../actions";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Card from '../Card/Card';
 
-// export class Favorites extends Component {
+export class Favorites extends Component {
 
-  
-
-
-
-//   render() {
+  render() {
    
-//     const { movies, toggleFavorites } = this.props;
-//         const buildCards = this.state.favorites.map((movie, index) => {
-//       return (
-//         <div key={index}>
-//           <button
-//             id={movie.id}
-//             onClick={(event) => this.handleClick(event.target.id)}
-//           >
-//             Favorite
-//           </button>
-//           <h1>{movie.title}</h1>
-//           <h2>Release Date: {movie.date}</h2>
-//           <img src={movie.poster} />
-//           <p>{movie.overview}</p>
-//         </div>
-//       );
-//    });
-//     return <div>{ buildCards }</div>;
-//   }
-// }
+    const movies = await getFavArray(id);
 
-// export const mapStateToProps = store => ({
-//   movies: store.movies
-// });
+    const buildFavs = <Card movies={movie}
+    return (
+        <div>
+        { buildFavs }
+        </div>
+    )
+  }
+}
 
-// export const mapDispatchToProps = dispatch => ({
-//   toggleFavorites: id => dispatch(toggleFavorite(id))
-// });
+export const mapStateToProps = store => ({
+  movies: store.movies
+});
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+export const mapDispatchToProps = dispatch => ({
+  toggleFavorites: id => dispatch(toggleFavorite(id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
