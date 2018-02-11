@@ -80,4 +80,6 @@ export const mapDispatchToProps = dispatch => ({
   getUser: user => dispatch(getUser(user))
 });
 
+App.defaultProps = {user: {name: ''}}
+
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

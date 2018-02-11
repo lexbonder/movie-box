@@ -7,7 +7,7 @@ export const fetchApi = async () => {
     );
     const movieData = await initalFetch.json();
     return cleanData(movieData.results);
-  } catch (error) {
+  } catch (fetchApiError) {
     throw new Error('error');
   }
 };
@@ -40,9 +40,9 @@ export const createUser = async (userInfo) => {
     const returnedObject = await reply.json()
     return returnedObject
     // -- Trying to get user object
-  } catch (error) {
-    const error = new Error('Add user is broken');
-    return error;
+  } catch (createUserError) {
+    createUserError = new Error('Add user is broken');
+    return createUserError;
   }
 };
 
@@ -78,9 +78,9 @@ export const getFavArray = async (id) => {
     const returnedObject = await reply.json();
     return returnedObject;
     
-  } catch (error) {
-    const error = new Error('GET favorites is broken');
-    return error;
+  } catch (getFavArrayError) {
+    getFavArrayError = new Error('GET favorites is broken');
+    return getFavArrayError;
   }
 }
 
@@ -96,9 +96,9 @@ export const removeFavorite = async (fav_id, user_id) => {
     return returnedObject;
     
     // -- Trying to get fav object
-  } catch (error) {
-    const error = new Error('Remove Favorite is broken');
-    return error;
+  } catch (removeFavError) {
+    removeFavError = new Error('Remove Favorite is broken');
+    return removeFavError;
   }
 }
 
@@ -116,9 +116,9 @@ export const addFavorite = async (newFav) => {
     const returnedObject = await reply.json();
     
     // -- Trying to get fav object
-  } catch (error) {
-    const error = new Error('Add fav is broken');
-    return error;
+  } catch (addFavError) {
+    addFavError = new Error('Add fav is broken');
+    return addFavError;
   }
 }
 
