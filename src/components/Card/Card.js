@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { addFavorite, getFavArray, removeFavorite } from '../../apiCall';
 import './Card.css';
 import { LoginForm } from '../LoginForm/LoginForm';
+import { Route, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 export class Card extends Component {
   constructor() {
@@ -34,10 +36,7 @@ export class Card extends Component {
     
       if(this.state.favWithoutUser === true){
         return (
-          <div>
-            <h3 className='please-login'>You must login in order to favorite a movie.</h3>
-            <LoginForm />
-          </div>
+            <Redirect to='/login/' />
         )
       } else {
     
