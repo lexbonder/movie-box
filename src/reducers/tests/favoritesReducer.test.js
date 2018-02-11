@@ -7,13 +7,7 @@ describe('favoritesReducer', () => {
   })
 
   it('should add a favorite into state if the type is ADD_FAVORITE', () => {
-    const mockAction = {type: 'ADD_FAVORITE', movie: {title: 'minions'}}
+    const mockAction = {type: 'ADD_FAVORITE', movies: [{title: 'minions'}]}
     expect(favoritesReducer(undefined, mockAction)).toEqual([{title: 'minions'}])
-  })
-
-  it('should remove a movie from state if the type is REMOVE_FAVORITE', () => {
-    const mockAction = {type: 'REMOVE_FAVORITE', movie: {movie_id: 'minions'}};
-    const mockState = [{movie_id: 'minions'}, {movie_id: 'matrix'}]
-    expect(favoritesReducer(mockState, mockAction)).toEqual([{movie_id: 'matrix'}])
   })
 })

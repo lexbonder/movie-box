@@ -33,20 +33,3 @@ describe('toggleFavorite', () => {
     });
 });
 
-describe('addFavorite', () => {
-
-    it('return a type of ADD_FAVORITE and with a movie', () => {
-        const movie = {
-            title: 'the greatest movie',
-            date: 'nunya',
-            overview: 'dogs are cute',
-            poster: 'fakepic.png',
-            id: 4
-        }
-        const expected = {
-            type: 'ADD_FAVORITE',
-            movie
-        }
-        expect(actions.addFavorite(movie)).toEqual(expected);
-    });
-});
