@@ -14,11 +14,21 @@ export class LoginForm extends Component {
       name: '',
       password: '',
       email: '',
+      error: '' // This state is the words that will show in the error <h3>
     };
   }
 
-  clearNameState = () => {
+  handleLoginClick = () => {
+    this.clearName();
+    this.clearError();
+  }
+
+  clearName = () => {
     this.setState({name: ''})
+  }
+
+  clearError = () => {
+    this.setState({error: ''})
   }
 
   handleInputs = event => {
@@ -29,39 +39,65 @@ export class LoginForm extends Component {
   };
 
   handleSubmit = async event => {
-    const { name, password, email } = this.state
     event.preventDefault();
+    const { name } = this.state
+    let createUserResponse;
     if (name !== '') {
-      await createUser(this.state); 
+      createUserResponse = await createUser(this.state); 
     } 
-    const user = await userLogin({password, email});
-    this.props.getUser(user)
+    this.handleSignUpError(createUserResponse) // First gate for errors
+    // this.props.history.push('/') <-- This is the other way to redirect
+    // Once we have error handling we'll see which we prefer to use
   };
 
-  backToHome = () => {
-    if(this.props.user.id) {
-      return <Redirect to='/' />
+  handleSignUpError = (response) => {
+    if (response && response.status !== 'success') {
+      const {error} = response
+      this.setState({error})
+    } else {
+      this.loginUser();
     }
   }
+
+  loginUser = async () => {
+    const { password, email } = this.state
+    const userLoginResponse = await userLogin({password, email});
+    if (typeof(userLoginResponse) === 'string') {
+      this.setState({error: userLoginResponse})
+    } else { 
+      this.props.getUser(userLoginResponse)
+      this.props.history.push('/')
+    }
+  }
+
+
+
+  // backToHome = () => {
+  //   if(this.props.user.id) {
+  //     return <Redirect to='/' />
+  //   }
+  // }
 
   render() {
     return (
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
-            onClick={this.clearNameState}
+            onClick={this.handleLoginClick}
             name='logIn'>
               Log In
           </button>
         </NavLink>
         <NavLink to='/login/sign-up'>
           <button
+            onClick={this.clearError}
             name='signUp'>
               Sign Up
           </button>
         </NavLink>
         <article className="signUp">
           <form onSubmit={this.handleSubmit}>
+            <h3>{this.state.error}</h3> {/* This is where the error message conmes up*/}
             <Route exact path='/login/sign-up' render={() => { 
               return(
                 <label>
@@ -98,7 +134,7 @@ export class LoginForm extends Component {
             <input type='submit' />
           </form>
         </article>
-        {this.backToHome()}
+        {/*{this.backToHome()}*/}
       </section>
     );
   }
