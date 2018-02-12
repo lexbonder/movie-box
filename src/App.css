@@ -9,9 +9,13 @@ body {
 }
 
 header {
+  
   background-image: url('./images/popcorn.jpg');
-  background-size: 690px;
+  background-size: 650px;
+  background-repeat: repeat-x;
+  background-position: center 0px;
   height: 200px;
+  width: 100%;
   margin-bottom: 10px;
   padding: 5px 20px 20px 20px;
 }
@@ -30,31 +34,123 @@ header {
   font-size: large;
 }
 
-.logo{
+.logo1,
+.logo2 {
   color: #fff;
   text-decoration: none;
   font-size: 35px;
   font-weight: bold;
-  width: 140px;
   display: block;
-  margin: 0 0 30px 0;
-  background-color: #000;
+  background: #000000a1;
+  position: absolute;
+  left:0;
+}
+
+.logo1 {
+  top:40px;
+  padding: 10px 50px 10px 30px;
+}
+
+.logo2 {
+  top:100px;
+  padding: 10px 50px 10px 30px;
+}
+
+
+
+.login {
+  padding: 10px 30px 10px 75px;
+  background: #000000a1;
+  border-bottom: 2px solid #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.login:hover {
+  border-bottom: 2px solid #fff;
 }
 
 .login,
 .log-out{
   position: absolute;
-  top: 20px; 
-  right: 30px;
+  top: 40px; 
+  right: 0;
   color: #fff;
-  background-color: #000;
 }
 
-.active {
-  /* For the NavLink, comes default, changes the current page's tab */
+nav ul{
+  margin:0;
+  padding:0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+nav li{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: right;
 }
+
+nav h1 {
+  padding: 5px 30px 5px 35px;
+  background: #000000a1;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 25px;
+  border-bottom: 2px solid #000;
+}
+
+nav a, 
+.view-favs {
+  display: inline;
+  background: #000000a1;
+  font-size: 18px;
+  font-weight: normal;
+  cursor: pointer;
+  border-bottom: 2px solid #000;
+  padding: 5px 30px 5px 35px;
+  position: relative;
+  top: 5px;
+  width: auto;
+  height: auto;
+}
+
+.view-favs {
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 10px 30px 7px 35px;
+  top: 22px;
+  position: relative;
+}
+
+nav a:hover, 
+.view-favs:hover {
+  border-bottom: 2px solid white;
+}
+
+@media screen and (max-width: 360px) {
+
+  header {
+    height: 280px;
+  }
+
+  .logo1 {
+    top:20px;
+    padding: 5px 50px 5px 30px;
+  }
+  
+  .logo2 {
+    top:70px;
+    padding: 5px 50px 5px 30px;
+  }
+
+  .login,
+  .log-out{
+    position: absolute;
+    top: 140px; 
+    right: 0;
+    color: #fff;
+  }
+
+}
+

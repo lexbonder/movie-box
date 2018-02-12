@@ -3,7 +3,7 @@ import apiKey from './apiKey.js';
 export const fetchApi = async () => {
   try {
     const initalFetch = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
     );
     const movieData = await initalFetch.json();
     return cleanData(movieData.results);

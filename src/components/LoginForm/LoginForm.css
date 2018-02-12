@@ -15,25 +15,12 @@ button {
   height: 40px;
 }
 
-a {
-  display: inline-block;
-  width: 150px;
-  height: 40px;
-  font-size: 22px;
-}
-
-.sign-up-button.active,
-.login-button.active {
-  background-color: blue;
-}
-
 input {
   width: 270px;
   font-size: 20px;
   margin: 15px 0;
   padding: 10px;
 }
-
 
 .error-message {
   margin: 0;
