@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Card } from './Card';
@@ -73,6 +74,24 @@ describe('Card', () => {
       wrapper.instance().handleFavClick(mockEvent, mockMovie)
 
       expect(wrapper.state().favWithoutUser).toEqual(true)
+    })
+  })
+
+  describe('toggleFavorite', () => {
+    it.skip('should run add favorite if the movie is not in favorites', () => {
+      const wrapper = shallow(<Card match={mockMatch} movies={mockMovieArray} />)
+      wrapper.addFavorite = jest.fn()
+      const id = 1
+
+      wrapper.instance().toggleFavorite(1, mockMovie)
+
+
+      expect(wrapper.addFavorite).toHaveBeenCalled()
+    })
+
+    it.skip('should run removeFavorite if the movie is alreayd in favorites', () => {
+      const wrapper = shallow(<Card match={mockMatch} movies={mockMovieArray} />)
+      expect(wrapper.removeFavorite)
     })
   })
 })

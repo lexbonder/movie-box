@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-// import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { addFavorite, getFavArray, removeFavorite } from '../../apiCall';
 import './Card.css';
 import { addFavArray } from '../../actions/';
-import { LoginForm } from '../LoginForm/LoginForm';
-import { Route, Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class Card extends Component {
   constructor() {
@@ -88,27 +86,46 @@ export class Card extends Component {
       });
       return <div className="cardWrapper">{renderedMovies}</div>;
     }
-    // <Route
-    //           exact
-    //           path="/favorites"
-    //           render={() => {
-    //             return (
-    //               <label>
-    //                 <input
-    //                   required
-    //                   className={this.state.toggleName}
-    //                   name="name"
-    //                   value={this.state.name}
-    //                   type="text"
-    //                   onChange={this.handleInputs}
-    //                   placeholder="Your Name"
-    //                 />
-    //               </label>
-    //             );
-    //           }}
-    //         />
   }
 }
+
+const { arrayOf, shape, string, number, bool, func } = PropTypes;
+
+Card.propTypes = {
+  movies: arrayOf(
+    shape({
+      title: string,
+      vote_average: number,
+      release_date: string,
+      overview: string,
+      poster_path: string,
+      movie_id: number,
+      favorite: bool
+    })
+  ),
+  user: shape({
+    id: number,
+    name: string,
+    password: string,
+    email: string
+  }),
+  favorites: arrayOf(
+    shape({
+      id: number,
+      movie_id: number,
+      user_id: number,
+      title: string,
+      poster_path: string,
+      release_date: string,
+      vote_average: number,
+      overview: string
+    })
+  ),
+  addFavArray: func,
+  match: shape({
+    path: string
+  })
+};
 
 export const mapStateToProps = store => ({
   movies: store.movies,
