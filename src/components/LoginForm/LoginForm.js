@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-// import ReduxThunk from 'redux-thunk';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Route, NavLink } from 'react-router-dom';
 import { createUser, userLogin } from '../../apiCall';
 import { getUser } from '../../actions';
 import './LoginForm.css';
-import { log } from 'util';
+import PropTypes from 'prop-types';
 
 export class LoginForm extends Component {
   constructor() {
@@ -41,11 +40,10 @@ export class LoginForm extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    debugger;
     const { name, password, email } = this.state;
     let createUserResponse;
     if (name !== '') {
-      createUserResponse = await createUser({name, password, email}) 
+      createUserResponse = await createUser({name, password, email});
     } 
     this.handleSignUpError(createUserResponse); // First gate for errors
   }
@@ -140,6 +138,26 @@ export class LoginForm extends Component {
     );
   }
 }
+
+const { shape, number, string, func, bool } = PropTypes;
+
+LoginForm.propTypes = {
+  user: shape({
+    id: number,
+    name: string,
+    password: string,
+    email: string
+  }),
+  getUser: func,
+  history: shape({
+    push: func,
+    location: shape({
+      state: shape({
+        needLogin: bool
+      })
+    })
+  })
+};
 
 export const mapStateToProps = ({ user }) => ({ user });
 
