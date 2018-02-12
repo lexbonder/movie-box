@@ -41,7 +41,6 @@ export class LoginForm extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    debugger;
     const { name, password, email } = this.state;
     let createUserResponse;
     if (name !== '') {

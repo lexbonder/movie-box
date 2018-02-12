@@ -16,12 +16,14 @@ export class Card extends Component {
       userFavorites: []
     };
   }
-  
+
   handleFavClick = (event, movie) => {
     event.preventDefault();
     const { id } = this.props.user;
 
-    id ? this.toggleFavorite(id, movie) : this.setState({favWithoutUser: true});
+    id
+      ? this.toggleFavorite(id, movie)
+      : this.setState({ favWithoutUser: true });
   };
 
   toggleFavorite = async (id, movie) => {
@@ -33,34 +35,36 @@ export class Card extends Component {
       : await addFavorite({ ...movie, user_id: id });
     const updatedFavs = await getFavArray(id);
     this.props.addFavArray(updatedFavs.data);
-
-  }
+  };
 
   render() {
     if (this.state.favWithoutUser === true) {
-        return <Redirect to={{
-                              pathname:'/login/',
-                              state: {needLogin: true}
-                            }} />
+      return (
+        <Redirect
+          to={{
+            pathname: '/login/',
+            state: { needLogin: true }
+          }}
+        />
+      );
     } else {
-      //console.log(this.props.match);
-      
       let movies;
 
-      if (this.props.match.path === '/' ){
+      if (this.props.match.path === '/') {
         movies = this.props.movies;
-      } else if (this.props.match.path === '/favorites'){ 
+      } else if (this.props.match.path === '/favorites') {
         movies = this.props.favorites;
       }
-
-      // const { movies } = this.props
       const renderedMovies = movies.map((movie, index) => {
+        const favIdList = this.props.favorites.map(fav => fav.movie_id);
+        const changeClass = favIdList.includes(movie.movie_id) ? 'active' : '';
+
         return (
           <div className="Card flip-container" key={index}>
             <div className="posterWrapper flipper">
-              <button className="front">&#9733;</button>
+              <button className={`front ${changeClass}`}>&#9733;</button>
               <button
-                className="back"
+                className={`back ${changeClass}`}
                 id={movie.id}
                 onClick={event => this.handleFavClick(event, movie)}
               >
