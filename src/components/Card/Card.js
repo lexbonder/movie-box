@@ -98,7 +98,7 @@ export class Card extends Component {
   }
 }
 
-const { arrayOf, shape, string, number, bool, func } = PropTypes;
+const { arrayOf, shape, string, number, bool, func, oneOfType } = PropTypes;
 
 Card.propTypes = {
   movies: arrayOf(
@@ -126,7 +126,7 @@ Card.propTypes = {
       title: string,
       poster_path: string,
       release_date: string,
-      vote_average: number,
+      vote_average: oneOfType([string, number]),
       overview: string
     })
   ),
