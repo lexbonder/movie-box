@@ -33,19 +33,30 @@
   right: -2px;
   top: 0px;
   font-size: 40px;
-  color: rgba(142, 142, 142, 0.748);
+  color: rgba(142, 142, 142, 0.9);
   background-color: transparent;
   height: 50px;
   width: 50px;
   border: none;
+  text-shadow: 2px 2px 2px rgb(0,0,0);
+  outline: none;
+  cursor: pointer;
 
   z-index: 3;
 }
 
 
-.Card button:hover {
-  color: rgb(210, 185, 0)
+.Card button:hover,
+.Card button.active:hover {
+  color: rgb(210, 185, 0);
+  text-shadow: 0 0 5px rgb(210,185,0);
 }
+
+.Card button:active,
+.Card button.active:active {
+  text-shadow: 0 0 10px rgb(210,185,0);
+}
+
 button.front
 {
   right: 5px;
@@ -56,7 +67,8 @@ button.back{
 }
 
 .Card button.active{
-  color: rgb(210, 185, 0)
+  color: rgb(210, 185, 0);
+  text-shadow: 1px 1px 1px rgba(210, 185, 0, .2);
 }
 
 .textBox {
