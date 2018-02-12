@@ -5,6 +5,28 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Card
+    favorites={
+      Array [
+        Object {
+          "favorite": false,
+          "movie_id": 198663,
+          "overview": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg",
+          "release_date": "2014",
+          "title": "The Maze Runner",
+          "vote_average": 7,
+        },
+        Object {
+          "favorite": false,
+          "movie_id": 211672,
+          "overview": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+          "poster_path": "https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg",
+          "release_date": "2015",
+          "title": "Minions",
+          "vote_average": 6.4,
+        },
+      ]
+    }
     match={
       Object {
         "path": "/",
@@ -53,12 +75,12 @@ ShallowWrapper {
             className="posterWrapper flipper"
           >
             <button
-              className="front"
+              className="front active"
             >
               ★
             </button>
             <button
-              className="back"
+              className="back active"
               id={undefined}
               onClick={[Function]}
             >
@@ -100,12 +122,12 @@ ShallowWrapper {
             className="posterWrapper flipper"
           >
             <button
-              className="front"
+              className="front active"
             >
               ★
             </button>
             <button
-              className="back"
+              className="back active"
               id={undefined}
               onClick={[Function]}
             >
@@ -154,12 +176,12 @@ ShallowWrapper {
             className="posterWrapper flipper"
           >
             <button
-              className="front"
+              className="front active"
             >
               ★
             </button>
             <button
-              className="back"
+              className="back active"
               id={undefined}
               onClick={[Function]}
             >
@@ -203,12 +225,12 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <button
-                className="front"
+                className="front active"
               >
                 ★
               </button>,
               <button
-                className="back"
+                className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
@@ -252,7 +274,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "★",
-                "className": "front",
+                "className": "front active",
               },
               "ref": null,
               "rendered": "★",
@@ -264,7 +286,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "★",
-                "className": "back",
+                "className": "back active",
                 "id": undefined,
                 "onClick": [Function],
               },
@@ -378,12 +400,12 @@ ShallowWrapper {
             className="posterWrapper flipper"
           >
             <button
-              className="front"
+              className="front active"
             >
               ★
             </button>
             <button
-              className="back"
+              className="back active"
               id={undefined}
               onClick={[Function]}
             >
@@ -427,12 +449,12 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <button
-                className="front"
+                className="front active"
               >
                 ★
               </button>,
               <button
-                className="back"
+                className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
@@ -476,7 +498,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "★",
-                "className": "front",
+                "className": "front active",
               },
               "ref": null,
               "rendered": "★",
@@ -488,7 +510,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "★",
-                "className": "back",
+                "className": "back active",
                 "id": undefined,
                 "onClick": [Function],
               },
@@ -610,12 +632,12 @@ ShallowWrapper {
               className="posterWrapper flipper"
             >
               <button
-                className="front"
+                className="front active"
               >
                 ★
               </button>
               <button
-                className="back"
+                className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
@@ -657,12 +679,12 @@ ShallowWrapper {
               className="posterWrapper flipper"
             >
               <button
-                className="front"
+                className="front active"
               >
                 ★
               </button>
               <button
-                className="back"
+                className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
@@ -711,12 +733,12 @@ ShallowWrapper {
               className="posterWrapper flipper"
             >
               <button
-                className="front"
+                className="front active"
               >
                 ★
               </button>
               <button
-                className="back"
+                className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
@@ -760,12 +782,12 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <button
-                  className="front"
+                  className="front active"
                 >
                   ★
                 </button>,
                 <button
-                  className="back"
+                  className="back active"
                   id={undefined}
                   onClick={[Function]}
                 >
@@ -809,7 +831,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "★",
-                  "className": "front",
+                  "className": "front active",
                 },
                 "ref": null,
                 "rendered": "★",
@@ -821,7 +843,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "★",
-                  "className": "back",
+                  "className": "back active",
                   "id": undefined,
                   "onClick": [Function],
                 },
@@ -935,12 +957,12 @@ ShallowWrapper {
               className="posterWrapper flipper"
             >
               <button
-                className="front"
+                className="front active"
               >
                 ★
               </button>
               <button
-                className="back"
+                className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
@@ -984,12 +1006,12 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <button
-                  className="front"
+                  className="front active"
                 >
                   ★
                 </button>,
                 <button
-                  className="back"
+                  className="back active"
                   id={undefined}
                   onClick={[Function]}
                 >
@@ -1033,7 +1055,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "★",
-                  "className": "front",
+                  "className": "front active",
                 },
                 "ref": null,
                 "rendered": "★",
@@ -1045,7 +1067,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "★",
-                  "className": "back",
+                  "className": "back active",
                   "id": undefined,
                   "onClick": [Function],
                 },

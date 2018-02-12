@@ -15,16 +15,14 @@ button {
   height: 40px;
 }
 
-a {
-  display: inline-block;
-  width: 150px;
-  height: 40px;
-  font-size: 22px;
+.non-focused {
+  background-color: #ccc;
+  color: gray;
 }
 
-.sign-up-button.active,
-.login-button.active {
-  background-color: blue;
+.non-focused:hover {
+  background-color: #ddd;
+  color: #333;
 }
 
 input {
@@ -33,7 +31,6 @@ input {
   margin: 15px 0;
   padding: 10px;
 }
-
 
 .error-message {
   margin: 0;
