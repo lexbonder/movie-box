@@ -23,15 +23,29 @@ describe('LoginForm', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  describe('handleLoginClick', () => {
-    it('should call clear name and clear error when it is called', () => {
+  describe('handleLoginButtonClick', () => {
+    it('should call clearName, clearError and toggleButtons when it is called', () => {
       wrapper.instance().clearName = jest.fn()
       wrapper.instance().clearError = jest.fn()
-
-      wrapper.instance().handleLoginClick()
+      wrapper.instance().toggleButtons = jest.fn()
+      
+      wrapper.instance().handleLoginButtonClick()
 
       expect(wrapper.instance().clearName).toHaveBeenCalled()
       expect(wrapper.instance().clearError).toHaveBeenCalled()
+      expect(wrapper.instance().toggleButtons).toHaveBeenCalledWith('loginButton')
+    })
+  })
+
+  describe('handleSignUpButtonClick', () => {
+    it('should call clearName and toggleButtons when called', () => {
+      wrapper.instance().clearError = jest.fn()
+      wrapper.instance().toggleButtons = jest.fn()
+      
+      wrapper.instance().handleSignUpButtonClick()
+
+      expect(wrapper.instance().clearError).toHaveBeenCalled()
+      expect(wrapper.instance().toggleButtons).toHaveBeenCalledWith('signUpButton')
     })
   })
 

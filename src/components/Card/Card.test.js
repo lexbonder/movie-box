@@ -5,6 +5,7 @@ import { Card } from './Card';
 
 describe('Card', () => {
   let mockMovieArray;
+  let mockFavoriteArray;
   let mockUser;
   let mockMovie;
   let mockMatch;
@@ -44,13 +45,13 @@ describe('Card', () => {
   })
 
   it('Should match the snapshot', () => {
-    const wrapper = shallow(<Card movies={mockMovieArray} match={mockMatch} />)
+    const wrapper = shallow(<Card movies={mockMovieArray} favorites={mockMovieArray} match={mockMatch} />)
 
     expect(wrapper).toMatchSnapshot()
   })
 
   it('should have default state', () => {
-    const wrapper = shallow(<Card movies={mockMovieArray} match={mockMatch} />)
+    const wrapper = shallow(<Card movies={mockMovieArray} favorites={mockMovieArray} match={mockMatch} />)
     const expectedState = {favWithoutUser: false, userFavorites: []}
 
     expect(wrapper.state()).toEqual(expectedState)
@@ -59,7 +60,7 @@ describe('Card', () => {
   describe('handleFavClick', () => {
     it('should call toggle favorite if a user is logged in', () => {
       const mockEvent = {preventDefault: jest.fn()}
-      const wrapper = shallow(<Card movies={mockMovieArray} user={mockUser} match={mockMatch} />)
+      const wrapper = shallow(<Card movies={mockMovieArray} favorites={mockMovieArray} user={mockUser} match={mockMatch} />)
       wrapper.instance().toggleFavorite = jest.fn()
 
       wrapper.instance().handleFavClick(mockEvent, mockMovie)
@@ -69,7 +70,7 @@ describe('Card', () => {
 
     it('should change the state if a user is not logged in', () => {
       const mockEvent = {preventDefault: jest.fn()}
-      const wrapper = shallow(<Card movies={mockMovieArray} user={{undefined}} match={mockMatch} />)
+      const wrapper = shallow(<Card movies={mockMovieArray} favorites={mockMovieArray} user={{undefined}} match={mockMatch} />)
 
       wrapper.instance().handleFavClick(mockEvent, mockMovie)
 
@@ -79,7 +80,7 @@ describe('Card', () => {
 
   describe('toggleFavorite', () => {
     it.skip('should run add favorite if the movie is not in favorites', () => {
-      const wrapper = shallow(<Card match={mockMatch} movies={mockMovieArray} />)
+      const wrapper = shallow(<Card match={mockMatch} favorites={mockMovieArray} movies={mockMovieArray} />)
       wrapper.addFavorite = jest.fn()
       const id = 1
 
