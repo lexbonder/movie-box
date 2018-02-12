@@ -55,6 +55,10 @@ button.back{
   left: 5px;
 }
 
+.Card button.active{
+  color: rgb(210, 185, 0)
+}
+
 .textBox {
   position: absolute;
   top: 50;
