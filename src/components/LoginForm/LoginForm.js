@@ -14,22 +14,30 @@ export class LoginForm extends Component {
       name: '',
       password: '',
       email: '',
-      error: ''
+      error: '',
+      loginButton: '',
+      signUpButton: 'non-focused'
     };
   }
 
-  handleLoginClick = () => {
+  handleLoginButtonClick = () => {
     this.clearName();
     this.clearError();
-  };
+    this.toggleButtons('loginButton');
+  }
+
+  handleSignUpButtonClick = () => {
+    this.clearError();
+    this.toggleButtons('signUpButton');
+  }
 
   clearName = () => {
     this.setState({ name: '' });
-  };
+  }
 
   clearError = () => {
     this.setState({ error: '' });
-  };
+  }
 
   handleInputs = event => {
     const { name, value } = event.target;
@@ -55,7 +63,7 @@ export class LoginForm extends Component {
     } else {
       this.loginUser();
     }
-  };
+  }
 
   loginUser = async () => {
     const { password, email } = this.state;
@@ -67,7 +75,15 @@ export class LoginForm extends Component {
       localStorage.setItem('UserId', userLoginResponse.id);
       this.props.history.push('/');
     }
-  };
+  }
+
+  toggleButtons = (button) => {
+    if (button === 'loginButton') {
+      this.setState({loginButton: '', signUpButton: 'non-focused'});
+    } else { 
+      this.setState({loginButton: 'non-focused', signUpButton: ''});
+    }
+  }
 
 
   render() {
@@ -80,16 +96,16 @@ export class LoginForm extends Component {
       <section className='login-wrap'>
         <NavLink to='/login/'>
           <button
-            className={`login-button ${this.state.loginClicked}`}
-            onClick={this.handleLoginClick}
+            className={`login-button ${this.state.loginButton}`}
+            onClick={this.handleLoginButtonClick}
             name='logIn'>
               Log In
           </button>
         </NavLink>
         <NavLink to='/login/sign-up'>
           <button
-            className={`sign-up-button ${this.state.signUpClicked}`}
-            onClick={this.clearError}
+            className={`sign-up-button ${this.state.signUpButton}`}
+            onClick={this.handleSignUpButtonClick}
             name='signUp'>
               Sign Up
           </button>

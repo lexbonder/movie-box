@@ -38,7 +38,7 @@ ShallowWrapper {
           to="/login/"
         >
           <button
-            className="login-button undefined"
+            className="login-button "
             name="logIn"
             onClick={[Function]}
           >
@@ -51,7 +51,7 @@ ShallowWrapper {
           to="/login/sign-up"
         >
           <button
-            className="sign-up-button undefined"
+            className="sign-up-button non-focused"
             name="signUp"
             onClick={[Function]}
           >
@@ -118,7 +118,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <button
-            className="login-button undefined"
+            className="login-button "
             name="logIn"
             onClick={[Function]}
           >
@@ -133,7 +133,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Log In",
-            "className": "login-button undefined",
+            "className": "login-button ",
             "name": "logIn",
             "onClick": [Function],
           },
@@ -151,7 +151,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <button
-            className="sign-up-button undefined"
+            className="sign-up-button non-focused"
             name="signUp"
             onClick={[Function]}
           >
@@ -166,7 +166,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Sign Up",
-            "className": "sign-up-button undefined",
+            "className": "sign-up-button non-focused",
             "name": "signUp",
             "onClick": [Function],
           },
@@ -433,7 +433,7 @@ ShallowWrapper {
             to="/login/"
           >
             <button
-              className="login-button undefined"
+              className="login-button "
               name="logIn"
               onClick={[Function]}
             >
@@ -446,7 +446,7 @@ ShallowWrapper {
             to="/login/sign-up"
           >
             <button
-              className="sign-up-button undefined"
+              className="sign-up-button non-focused"
               name="signUp"
               onClick={[Function]}
             >
@@ -513,7 +513,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <button
-              className="login-button undefined"
+              className="login-button "
               name="logIn"
               onClick={[Function]}
             >
@@ -528,7 +528,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Log In",
-              "className": "login-button undefined",
+              "className": "login-button ",
               "name": "logIn",
               "onClick": [Function],
             },
@@ -546,7 +546,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <button
-              className="sign-up-button undefined"
+              className="sign-up-button non-focused"
               name="signUp"
               onClick={[Function]}
             >
@@ -561,7 +561,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Sign Up",
-              "className": "sign-up-button undefined",
+              "className": "sign-up-button non-focused",
               "name": "signUp",
               "onClick": [Function],
             },
@@ -865,7 +865,7 @@ ShallowWrapper {
           to="/login/"
         >
           <button
-            className="login-button undefined"
+            className="login-button non-focused"
             name="logIn"
             onClick={[Function]}
           >
@@ -878,7 +878,7 @@ ShallowWrapper {
           to="/login/sign-up"
         >
           <button
-            className="sign-up-button undefined"
+            className="sign-up-button "
             name="signUp"
             onClick={[Function]}
           >
@@ -945,7 +945,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <button
-            className="login-button undefined"
+            className="login-button non-focused"
             name="logIn"
             onClick={[Function]}
           >
@@ -960,7 +960,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Log In",
-            "className": "login-button undefined",
+            "className": "login-button non-focused",
             "name": "logIn",
             "onClick": [Function],
           },
@@ -978,7 +978,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <button
-            className="sign-up-button undefined"
+            className="sign-up-button "
             name="signUp"
             onClick={[Function]}
           >
@@ -993,7 +993,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Sign Up",
-            "className": "sign-up-button undefined",
+            "className": "sign-up-button ",
             "name": "signUp",
             "onClick": [Function],
           },
@@ -1260,7 +1260,7 @@ ShallowWrapper {
             to="/login/"
           >
             <button
-              className="login-button undefined"
+              className="login-button non-focused"
               name="logIn"
               onClick={[Function]}
             >
@@ -1273,7 +1273,7 @@ ShallowWrapper {
             to="/login/sign-up"
           >
             <button
-              className="sign-up-button undefined"
+              className="sign-up-button "
               name="signUp"
               onClick={[Function]}
             >
@@ -1340,7 +1340,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <button
-              className="login-button undefined"
+              className="login-button non-focused"
               name="logIn"
               onClick={[Function]}
             >
@@ -1355,7 +1355,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Log In",
-              "className": "login-button undefined",
+              "className": "login-button non-focused",
               "name": "logIn",
               "onClick": [Function],
             },
@@ -1373,7 +1373,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <button
-              className="sign-up-button undefined"
+              className="sign-up-button "
               name="signUp"
               onClick={[Function]}
             >
@@ -1388,7 +1388,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Sign Up",
-              "className": "sign-up-button undefined",
+              "className": "sign-up-button ",
               "name": "signUp",
               "onClick": [Function],
             },
