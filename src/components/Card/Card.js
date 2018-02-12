@@ -41,8 +41,7 @@ export class Card extends Component {
         state: {needLogin: true}
       }} />;
     } else {
-      //console.log(this.props.match);
-      
+
       let movies;
 
       if (this.props.match.path === '/' ){
@@ -51,7 +50,6 @@ export class Card extends Component {
         movies = this.props.favorites;
       }
 
-      // const { movies } = this.props
       const renderedMovies = movies.map((movie, index) => {
         return (
           <div className="Card flip-container" key={index}>
