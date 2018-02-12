@@ -137,3 +137,9 @@ p {
   text-align: center;
 }
 
+.no-favorites {
+  text-align: center;
+  color: rgb(170, 0, 0);
+  font-size: 2em;
+}
+

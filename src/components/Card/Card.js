@@ -84,7 +84,16 @@ export class Card extends Component {
           </div>
         );
       });
-      return <div className="cardWrapper">{renderedMovies}</div>;
+      const noFavorites = !this.props.favorites.length &&
+        this.props.match.path === '/favorites'
+        ? <h1 className='no-favorites'>{`You don't have any favorites`}</h1>
+        : <div></div>;
+      return (
+        <div>
+          {noFavorites}
+          <div className="cardWrapper">{renderedMovies}</div>
+        </div>
+      );
     }
   }
 }
