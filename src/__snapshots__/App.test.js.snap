@@ -28,10 +28,18 @@ ShallowWrapper {
           <NavLink
             activeClassName="active"
             ariaCurrent="true"
-            className="logo"
+            className="logo1"
             to="/"
           >
-            Movie Tracker Beyotch
+            Movie
+          </NavLink>
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="logo2"
+            to="/"
+          >
+            Tracker
           </NavLink>
           <NavLink
             activeClassName="active"
@@ -71,10 +79,18 @@ ShallowWrapper {
             <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              className="logo"
+              className="logo1"
               to="/"
             >
-              Movie Tracker Beyotch
+              Movie
+            </NavLink>,
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="logo2"
+              to="/"
+            >
+              Tracker
             </NavLink>,
             <NavLink
               activeClassName="active"
@@ -95,12 +111,27 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Movie Tracker Beyotch",
-              "className": "logo",
+              "children": "Movie",
+              "className": "logo1",
               "to": "/",
             },
             "ref": null,
-            "rendered": "Movie Tracker Beyotch",
+            "rendered": "Movie",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "Tracker",
+              "className": "logo2",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": "Tracker",
             "type": [Function],
           },
           Object {
@@ -174,10 +205,18 @@ ShallowWrapper {
             <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              className="logo"
+              className="logo1"
               to="/"
             >
-              Movie Tracker Beyotch
+              Movie
+            </NavLink>
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="logo2"
+              to="/"
+            >
+              Tracker
             </NavLink>
             <NavLink
               activeClassName="active"
@@ -217,10 +256,18 @@ ShallowWrapper {
               <NavLink
                 activeClassName="active"
                 ariaCurrent="true"
-                className="logo"
+                className="logo1"
                 to="/"
               >
-                Movie Tracker Beyotch
+                Movie
+              </NavLink>,
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                className="logo2"
+                to="/"
+              >
+                Tracker
               </NavLink>,
               <NavLink
                 activeClassName="active"
@@ -241,12 +288,27 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Movie Tracker Beyotch",
-                "className": "logo",
+                "children": "Movie",
+                "className": "logo1",
                 "to": "/",
               },
               "ref": null,
-              "rendered": "Movie Tracker Beyotch",
+              "rendered": "Movie",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Tracker",
+                "className": "logo2",
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Tracker",
               "type": [Function],
             },
             Object {
@@ -349,10 +411,18 @@ ShallowWrapper {
           <NavLink
             activeClassName="active"
             ariaCurrent="true"
-            className="logo"
+            className="logo1"
             to="/"
           >
-            Movie Tracker Beyotch
+            Movie
+          </NavLink>
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="logo2"
+            to="/"
+          >
+            Tracker
           </NavLink>
           <NavLink
             activeClassName="active"
@@ -392,10 +462,18 @@ ShallowWrapper {
             <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              className="logo"
+              className="logo1"
               to="/"
             >
-              Movie Tracker Beyotch
+              Movie
+            </NavLink>,
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="logo2"
+              to="/"
+            >
+              Tracker
             </NavLink>,
             <NavLink
               activeClassName="active"
@@ -416,12 +494,27 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Movie Tracker Beyotch",
-              "className": "logo",
+              "children": "Movie",
+              "className": "logo1",
               "to": "/",
             },
             "ref": null,
-            "rendered": "Movie Tracker Beyotch",
+            "rendered": "Movie",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "Tracker",
+              "className": "logo2",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": "Tracker",
             "type": [Function],
           },
           Object {
@@ -495,10 +588,18 @@ ShallowWrapper {
             <NavLink
               activeClassName="active"
               ariaCurrent="true"
-              className="logo"
+              className="logo1"
               to="/"
             >
-              Movie Tracker Beyotch
+              Movie
+            </NavLink>
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="logo2"
+              to="/"
+            >
+              Tracker
             </NavLink>
             <NavLink
               activeClassName="active"
@@ -538,10 +639,18 @@ ShallowWrapper {
               <NavLink
                 activeClassName="active"
                 ariaCurrent="true"
-                className="logo"
+                className="logo1"
                 to="/"
               >
-                Movie Tracker Beyotch
+                Movie
+              </NavLink>,
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                className="logo2"
+                to="/"
+              >
+                Tracker
               </NavLink>,
               <NavLink
                 activeClassName="active"
@@ -562,12 +671,27 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Movie Tracker Beyotch",
-                "className": "logo",
+                "children": "Movie",
+                "className": "logo1",
                 "to": "/",
               },
               "ref": null,
-              "rendered": "Movie Tracker Beyotch",
+              "rendered": "Movie",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Tracker",
+                "className": "logo2",
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Tracker",
               "type": [Function],
             },
             Object {

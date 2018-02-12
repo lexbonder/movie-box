@@ -48,7 +48,7 @@ export const returningUser = async id => {
   try {
     const reply = await fetch('/api/users');
     const allUsersArray = await reply.json();
-    return allUsersArray.data.find(user => user.id === parseInt(id));
+    return allUsersArray.data.find(user => user.id === parseInt(id, 10));
   } catch (returningUserError) {
     return 'Network Error';
   }
