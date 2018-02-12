@@ -68,179 +68,33 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        false,
         <div
-          className="Card flip-container"
+          className="cardWrapper"
         >
           <div
-            className="posterWrapper flipper"
+            className="Card flip-container"
           >
-            <button
-              className="front active"
-            >
-              ★
-            </button>
-            <button
-              className="back active"
-              id={undefined}
-              onClick={[Function]}
-            >
-              ★
-            </button>
-            <img
-              alt="Movie poster from The Maze Runner"
-              className="front"
-              src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
-            />
             <div
-              className="textBox back"
+              className="posterWrapper flipper"
             >
-              <h1
-                className="movie-title"
-              >
-                The Maze Runner
-              </h1>
-              <p
-                className="date"
-              >
-                2014
-              </p>
-              <p
-                className="rating"
-              >
-                Rating: 7 / 10
-              </p>
-              <p>
-                Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
-              </p>
-            </div>
-          </div>
-        </div>,
-        <div
-          className="Card flip-container"
-        >
-          <div
-            className="posterWrapper flipper"
-          >
-            <button
-              className="front active"
-            >
-              ★
-            </button>
-            <button
-              className="back active"
-              id={undefined}
-              onClick={[Function]}
-            >
-              ★
-            </button>
-            <img
-              alt="Movie poster from Minions"
-              className="front"
-              src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
-            />
-            <div
-              className="textBox back"
-            >
-              <h1
-                className="movie-title"
-              >
-                Minions
-              </h1>
-              <p
-                className="date"
-              >
-                2015
-              </p>
-              <p
-                className="rating"
-              >
-                Rating: 6.4 / 10
-              </p>
-              <p>
-                Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
-              </p>
-            </div>
-          </div>
-        </div>,
-      ],
-      "className": "cardWrapper",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": "0",
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="posterWrapper flipper"
-          >
-            <button
-              className="front active"
-            >
-              ★
-            </button>
-            <button
-              className="back active"
-              id={undefined}
-              onClick={[Function]}
-            >
-              ★
-            </button>
-            <img
-              alt="Movie poster from The Maze Runner"
-              className="front"
-              src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
-            />
-            <div
-              className="textBox back"
-            >
-              <h1
-                className="movie-title"
-              >
-                The Maze Runner
-              </h1>
-              <p
-                className="date"
-              >
-                2014
-              </p>
-              <p
-                className="rating"
-              >
-                Rating: 7 / 10
-              </p>
-              <p>
-                Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
-              </p>
-            </div>
-          </div>,
-          "className": "Card flip-container",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
               <button
                 className="front active"
               >
                 ★
-              </button>,
+              </button>
               <button
                 className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
                 ★
-              </button>,
+              </button>
               <img
                 alt="Movie poster from The Maze Runner"
                 className="front"
                 src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
-              />,
+              />
               <div
                 className="textBox back"
               >
@@ -262,209 +116,32 @@ ShallowWrapper {
                 <p>
                   Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
                 </p>
-              </div>,
-            ],
-            "className": "posterWrapper flipper",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "★",
-                "className": "front active",
-              },
-              "ref": null,
-              "rendered": "★",
-              "type": "button",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "★",
-                "className": "back active",
-                "id": undefined,
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "★",
-              "type": "button",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "alt": "Movie poster from The Maze Runner",
-                "className": "front",
-                "src": "https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "img",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <h1
-                    className="movie-title"
-                  >
-                    The Maze Runner
-                  </h1>,
-                  <p
-                    className="date"
-                  >
-                    2014
-                  </p>,
-                  <p
-                    className="rating"
-                  >
-                    Rating: 7 / 10
-                  </p>,
-                  <p>
-                    Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
-                  </p>,
-                ],
-                "className": "textBox back",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "The Maze Runner",
-                    "className": "movie-title",
-                  },
-                  "ref": null,
-                  "rendered": "The Maze Runner",
-                  "type": "h1",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "2014",
-                    "className": "date",
-                  },
-                  "ref": null,
-                  "rendered": "2014",
-                  "type": "p",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Rating: 7 / 10",
-                    "className": "rating",
-                  },
-                  "ref": null,
-                  "rendered": "Rating: 7 / 10",
-                  "type": "p",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
-                  },
-                  "ref": null,
-                  "rendered": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
-                  "type": "p",
-                },
-              ],
-              "type": "div",
-            },
-          ],
-          "type": "div",
-        },
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": "1",
-        "nodeType": "host",
-        "props": Object {
-          "children": <div
-            className="posterWrapper flipper"
-          >
-            <button
-              className="front active"
-            >
-              ★
-            </button>
-            <button
-              className="back active"
-              id={undefined}
-              onClick={[Function]}
-            >
-              ★
-            </button>
-            <img
-              alt="Movie poster from Minions"
-              className="front"
-              src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
-            />
-            <div
-              className="textBox back"
-            >
-              <h1
-                className="movie-title"
-              >
-                Minions
-              </h1>
-              <p
-                className="date"
-              >
-                2015
-              </p>
-              <p
-                className="rating"
-              >
-                Rating: 6.4 / 10
-              </p>
-              <p>
-                Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
-              </p>
+              </div>
             </div>
-          </div>,
-          "className": "Card flip-container",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
+          </div>
+          <div
+            className="Card flip-container"
+          >
+            <div
+              className="posterWrapper flipper"
+            >
               <button
                 className="front active"
               >
                 ★
-              </button>,
+              </button>
               <button
                 className="back active"
                 id={undefined}
                 onClick={[Function]}
               >
                 ★
-              </button>,
+              </button>
               <img
                 alt="Movie poster from Minions"
                 className="front"
                 src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
-              />,
+              />
               <div
                 className="textBox back"
               >
@@ -486,77 +163,218 @@ ShallowWrapper {
                 <p>
                   Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="Card flip-container"
+            >
+              <div
+                className="posterWrapper flipper"
+              >
+                <button
+                  className="front active"
+                >
+                  ★
+                </button>
+                <button
+                  className="back active"
+                  id={undefined}
+                  onClick={[Function]}
+                >
+                  ★
+                </button>
+                <img
+                  alt="Movie poster from The Maze Runner"
+                  className="front"
+                  src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
+                />
+                <div
+                  className="textBox back"
+                >
+                  <h1
+                    className="movie-title"
+                  >
+                    The Maze Runner
+                  </h1>
+                  <p
+                    className="date"
+                  >
+                    2014
+                  </p>
+                  <p
+                    className="rating"
+                  >
+                    Rating: 7 / 10
+                  </p>
+                  <p>
+                    Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                  </p>
+                </div>
+              </div>
+            </div>,
+            <div
+              className="Card flip-container"
+            >
+              <div
+                className="posterWrapper flipper"
+              >
+                <button
+                  className="front active"
+                >
+                  ★
+                </button>
+                <button
+                  className="back active"
+                  id={undefined}
+                  onClick={[Function]}
+                >
+                  ★
+                </button>
+                <img
+                  alt="Movie poster from Minions"
+                  className="front"
+                  src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
+                />
+                <div
+                  className="textBox back"
+                >
+                  <h1
+                    className="movie-title"
+                  >
+                    Minions
+                  </h1>
+                  <p
+                    className="date"
+                  >
+                    2015
+                  </p>
+                  <p
+                    className="rating"
+                  >
+                    Rating: 6.4 / 10
+                  </p>
+                  <p>
+                    Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                  </p>
+                </div>
+              </div>
+            </div>,
+          ],
+          "className": "cardWrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="posterWrapper flipper"
+              >
+                <button
+                  className="front active"
+                >
+                  ★
+                </button>
+                <button
+                  className="back active"
+                  id={undefined}
+                  onClick={[Function]}
+                >
+                  ★
+                </button>
+                <img
+                  alt="Movie poster from The Maze Runner"
+                  className="front"
+                  src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
+                />
+                <div
+                  className="textBox back"
+                >
+                  <h1
+                    className="movie-title"
+                  >
+                    The Maze Runner
+                  </h1>
+                  <p
+                    className="date"
+                  >
+                    2014
+                  </p>
+                  <p
+                    className="rating"
+                  >
+                    Rating: 7 / 10
+                  </p>
+                  <p>
+                    Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                  </p>
+                </div>
               </div>,
-            ],
-            "className": "posterWrapper flipper",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "★",
-                "className": "front active",
-              },
-              "ref": null,
-              "rendered": "★",
-              "type": "button",
+              "className": "Card flip-container",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "★",
-                "className": "back active",
-                "id": undefined,
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "★",
-              "type": "button",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "alt": "Movie poster from Minions",
-                "className": "front",
-                "src": "https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "img",
-            },
-            Object {
+            "ref": null,
+            "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <h1
-                    className="movie-title"
+                  <button
+                    className="front active"
                   >
-                    Minions
-                  </h1>,
-                  <p
-                    className="date"
+                    ★
+                  </button>,
+                  <button
+                    className="back active"
+                    id={undefined}
+                    onClick={[Function]}
                   >
-                    2015
-                  </p>,
-                  <p
-                    className="rating"
+                    ★
+                  </button>,
+                  <img
+                    alt="Movie poster from The Maze Runner"
+                    className="front"
+                    src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
+                  />,
+                  <div
+                    className="textBox back"
                   >
-                    Rating: 6.4 / 10
-                  </p>,
-                  <p>
-                    Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
-                  </p>,
+                    <h1
+                      className="movie-title"
+                    >
+                      The Maze Runner
+                    </h1>
+                    <p
+                      className="date"
+                    >
+                      2014
+                    </p>
+                    <p
+                      className="rating"
+                    >
+                      Rating: 7 / 10
+                    </p>
+                    <p>
+                      Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                    </p>
+                  </div>,
                 ],
-                "className": "textBox back",
+                "className": "posterWrapper flipper",
               },
               "ref": null,
               "rendered": Array [
@@ -565,54 +383,349 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Minions",
-                    "className": "movie-title",
+                    "children": "★",
+                    "className": "front active",
                   },
                   "ref": null,
-                  "rendered": "Minions",
-                  "type": "h1",
+                  "rendered": "★",
+                  "type": "button",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "2015",
-                    "className": "date",
+                    "children": "★",
+                    "className": "back active",
+                    "id": undefined,
+                    "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "2015",
-                  "type": "p",
+                  "rendered": "★",
+                  "type": "button",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Rating: 6.4 / 10",
-                    "className": "rating",
+                    "alt": "Movie poster from The Maze Runner",
+                    "className": "front",
+                    "src": "https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg",
                   },
                   "ref": null,
-                  "rendered": "Rating: 6.4 / 10",
-                  "type": "p",
+                  "rendered": null,
+                  "type": "img",
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+                    "children": Array [
+                      <h1
+                        className="movie-title"
+                      >
+                        The Maze Runner
+                      </h1>,
+                      <p
+                        className="date"
+                      >
+                        2014
+                      </p>,
+                      <p
+                        className="rating"
+                      >
+                        Rating: 7 / 10
+                      </p>,
+                      <p>
+                        Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                      </p>,
+                    ],
+                    "className": "textBox back",
                   },
                   "ref": null,
-                  "rendered": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
-                  "type": "p",
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "The Maze Runner",
+                        "className": "movie-title",
+                      },
+                      "ref": null,
+                      "rendered": "The Maze Runner",
+                      "type": "h1",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "2014",
+                        "className": "date",
+                      },
+                      "ref": null,
+                      "rendered": "2014",
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Rating: 7 / 10",
+                        "className": "rating",
+                      },
+                      "ref": null,
+                      "rendered": "Rating: 7 / 10",
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
+                      },
+                      "ref": null,
+                      "rendered": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
                 },
               ],
               "type": "div",
             },
-          ],
-          "type": "div",
-        },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="posterWrapper flipper"
+              >
+                <button
+                  className="front active"
+                >
+                  ★
+                </button>
+                <button
+                  className="back active"
+                  id={undefined}
+                  onClick={[Function]}
+                >
+                  ★
+                </button>
+                <img
+                  alt="Movie poster from Minions"
+                  className="front"
+                  src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
+                />
+                <div
+                  className="textBox back"
+                >
+                  <h1
+                    className="movie-title"
+                  >
+                    Minions
+                  </h1>
+                  <p
+                    className="date"
+                  >
+                    2015
+                  </p>
+                  <p
+                    className="rating"
+                  >
+                    Rating: 6.4 / 10
+                  </p>
+                  <p>
+                    Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                  </p>
+                </div>
+              </div>,
+              "className": "Card flip-container",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    className="front active"
+                  >
+                    ★
+                  </button>,
+                  <button
+                    className="back active"
+                    id={undefined}
+                    onClick={[Function]}
+                  >
+                    ★
+                  </button>,
+                  <img
+                    alt="Movie poster from Minions"
+                    className="front"
+                    src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
+                  />,
+                  <div
+                    className="textBox back"
+                  >
+                    <h1
+                      className="movie-title"
+                    >
+                      Minions
+                    </h1>
+                    <p
+                      className="date"
+                    >
+                      2015
+                    </p>
+                    <p
+                      className="rating"
+                    >
+                      Rating: 6.4 / 10
+                    </p>
+                    <p>
+                      Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                    </p>
+                  </div>,
+                ],
+                "className": "posterWrapper flipper",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "★",
+                    "className": "front active",
+                  },
+                  "ref": null,
+                  "rendered": "★",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "★",
+                    "className": "back active",
+                    "id": undefined,
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "★",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "Movie poster from Minions",
+                    "className": "front",
+                    "src": "https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <h1
+                        className="movie-title"
+                      >
+                        Minions
+                      </h1>,
+                      <p
+                        className="date"
+                      >
+                        2015
+                      </p>,
+                      <p
+                        className="rating"
+                      >
+                        Rating: 6.4 / 10
+                      </p>,
+                      <p>
+                        Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                      </p>,
+                    ],
+                    "className": "textBox back",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Minions",
+                        "className": "movie-title",
+                      },
+                      "ref": null,
+                      "rendered": "Minions",
+                      "type": "h1",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "2015",
+                        "className": "date",
+                      },
+                      "ref": null,
+                      "rendered": "2015",
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Rating: 6.4 / 10",
+                        "className": "rating",
+                      },
+                      "ref": null,
+                      "rendered": "Rating: 6.4 / 10",
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+                      },
+                      "ref": null,
+                      "rendered": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+        ],
         "type": "div",
       },
     ],
@@ -625,179 +738,33 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          false,
           <div
-            className="Card flip-container"
+            className="cardWrapper"
           >
             <div
-              className="posterWrapper flipper"
+              className="Card flip-container"
             >
-              <button
-                className="front active"
-              >
-                ★
-              </button>
-              <button
-                className="back active"
-                id={undefined}
-                onClick={[Function]}
-              >
-                ★
-              </button>
-              <img
-                alt="Movie poster from The Maze Runner"
-                className="front"
-                src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
-              />
               <div
-                className="textBox back"
+                className="posterWrapper flipper"
               >
-                <h1
-                  className="movie-title"
-                >
-                  The Maze Runner
-                </h1>
-                <p
-                  className="date"
-                >
-                  2014
-                </p>
-                <p
-                  className="rating"
-                >
-                  Rating: 7 / 10
-                </p>
-                <p>
-                  Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
-                </p>
-              </div>
-            </div>
-          </div>,
-          <div
-            className="Card flip-container"
-          >
-            <div
-              className="posterWrapper flipper"
-            >
-              <button
-                className="front active"
-              >
-                ★
-              </button>
-              <button
-                className="back active"
-                id={undefined}
-                onClick={[Function]}
-              >
-                ★
-              </button>
-              <img
-                alt="Movie poster from Minions"
-                className="front"
-                src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
-              />
-              <div
-                className="textBox back"
-              >
-                <h1
-                  className="movie-title"
-                >
-                  Minions
-                </h1>
-                <p
-                  className="date"
-                >
-                  2015
-                </p>
-                <p
-                  className="rating"
-                >
-                  Rating: 6.4 / 10
-                </p>
-                <p>
-                  Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
-                </p>
-              </div>
-            </div>
-          </div>,
-        ],
-        "className": "cardWrapper",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": "0",
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="posterWrapper flipper"
-            >
-              <button
-                className="front active"
-              >
-                ★
-              </button>
-              <button
-                className="back active"
-                id={undefined}
-                onClick={[Function]}
-              >
-                ★
-              </button>
-              <img
-                alt="Movie poster from The Maze Runner"
-                className="front"
-                src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
-              />
-              <div
-                className="textBox back"
-              >
-                <h1
-                  className="movie-title"
-                >
-                  The Maze Runner
-                </h1>
-                <p
-                  className="date"
-                >
-                  2014
-                </p>
-                <p
-                  className="rating"
-                >
-                  Rating: 7 / 10
-                </p>
-                <p>
-                  Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
-                </p>
-              </div>
-            </div>,
-            "className": "Card flip-container",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
                 <button
                   className="front active"
                 >
                   ★
-                </button>,
+                </button>
                 <button
                   className="back active"
                   id={undefined}
                   onClick={[Function]}
                 >
                   ★
-                </button>,
+                </button>
                 <img
                   alt="Movie poster from The Maze Runner"
                   className="front"
                   src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
-                />,
+                />
                 <div
                   className="textBox back"
                 >
@@ -819,209 +786,32 @@ ShallowWrapper {
                   <p>
                     Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
                   </p>
-                </div>,
-              ],
-              "className": "posterWrapper flipper",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "★",
-                  "className": "front active",
-                },
-                "ref": null,
-                "rendered": "★",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "★",
-                  "className": "back active",
-                  "id": undefined,
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "★",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "alt": "Movie poster from The Maze Runner",
-                  "className": "front",
-                  "src": "https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "img",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <h1
-                      className="movie-title"
-                    >
-                      The Maze Runner
-                    </h1>,
-                    <p
-                      className="date"
-                    >
-                      2014
-                    </p>,
-                    <p
-                      className="rating"
-                    >
-                      Rating: 7 / 10
-                    </p>,
-                    <p>
-                      Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
-                    </p>,
-                  ],
-                  "className": "textBox back",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "The Maze Runner",
-                      "className": "movie-title",
-                    },
-                    "ref": null,
-                    "rendered": "The Maze Runner",
-                    "type": "h1",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "2014",
-                      "className": "date",
-                    },
-                    "ref": null,
-                    "rendered": "2014",
-                    "type": "p",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Rating: 7 / 10",
-                      "className": "rating",
-                    },
-                    "ref": null,
-                    "rendered": "Rating: 7 / 10",
-                    "type": "p",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
-                    },
-                    "ref": null,
-                    "rendered": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
-                    "type": "p",
-                  },
-                ],
-                "type": "div",
-              },
-            ],
-            "type": "div",
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": "1",
-          "nodeType": "host",
-          "props": Object {
-            "children": <div
-              className="posterWrapper flipper"
-            >
-              <button
-                className="front active"
-              >
-                ★
-              </button>
-              <button
-                className="back active"
-                id={undefined}
-                onClick={[Function]}
-              >
-                ★
-              </button>
-              <img
-                alt="Movie poster from Minions"
-                className="front"
-                src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
-              />
-              <div
-                className="textBox back"
-              >
-                <h1
-                  className="movie-title"
-                >
-                  Minions
-                </h1>
-                <p
-                  className="date"
-                >
-                  2015
-                </p>
-                <p
-                  className="rating"
-                >
-                  Rating: 6.4 / 10
-                </p>
-                <p>
-                  Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
-                </p>
+                </div>
               </div>
-            </div>,
-            "className": "Card flip-container",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
+            </div>
+            <div
+              className="Card flip-container"
+            >
+              <div
+                className="posterWrapper flipper"
+              >
                 <button
                   className="front active"
                 >
                   ★
-                </button>,
+                </button>
                 <button
                   className="back active"
                   id={undefined}
                   onClick={[Function]}
                 >
                   ★
-                </button>,
+                </button>
                 <img
                   alt="Movie poster from Minions"
                   className="front"
                   src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
-                />,
+                />
                 <div
                   className="textBox back"
                 >
@@ -1043,77 +833,218 @@ ShallowWrapper {
                   <p>
                     Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="Card flip-container"
+              >
+                <div
+                  className="posterWrapper flipper"
+                >
+                  <button
+                    className="front active"
+                  >
+                    ★
+                  </button>
+                  <button
+                    className="back active"
+                    id={undefined}
+                    onClick={[Function]}
+                  >
+                    ★
+                  </button>
+                  <img
+                    alt="Movie poster from The Maze Runner"
+                    className="front"
+                    src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
+                  />
+                  <div
+                    className="textBox back"
+                  >
+                    <h1
+                      className="movie-title"
+                    >
+                      The Maze Runner
+                    </h1>
+                    <p
+                      className="date"
+                    >
+                      2014
+                    </p>
+                    <p
+                      className="rating"
+                    >
+                      Rating: 7 / 10
+                    </p>
+                    <p>
+                      Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                    </p>
+                  </div>
+                </div>
+              </div>,
+              <div
+                className="Card flip-container"
+              >
+                <div
+                  className="posterWrapper flipper"
+                >
+                  <button
+                    className="front active"
+                  >
+                    ★
+                  </button>
+                  <button
+                    className="back active"
+                    id={undefined}
+                    onClick={[Function]}
+                  >
+                    ★
+                  </button>
+                  <img
+                    alt="Movie poster from Minions"
+                    className="front"
+                    src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
+                  />
+                  <div
+                    className="textBox back"
+                  >
+                    <h1
+                      className="movie-title"
+                    >
+                      Minions
+                    </h1>
+                    <p
+                      className="date"
+                    >
+                      2015
+                    </p>
+                    <p
+                      className="rating"
+                    >
+                      Rating: 6.4 / 10
+                    </p>
+                    <p>
+                      Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                    </p>
+                  </div>
+                </div>
+              </div>,
+            ],
+            "className": "cardWrapper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="posterWrapper flipper"
+                >
+                  <button
+                    className="front active"
+                  >
+                    ★
+                  </button>
+                  <button
+                    className="back active"
+                    id={undefined}
+                    onClick={[Function]}
+                  >
+                    ★
+                  </button>
+                  <img
+                    alt="Movie poster from The Maze Runner"
+                    className="front"
+                    src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
+                  />
+                  <div
+                    className="textBox back"
+                  >
+                    <h1
+                      className="movie-title"
+                    >
+                      The Maze Runner
+                    </h1>
+                    <p
+                      className="date"
+                    >
+                      2014
+                    </p>
+                    <p
+                      className="rating"
+                    >
+                      Rating: 7 / 10
+                    </p>
+                    <p>
+                      Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                    </p>
+                  </div>
                 </div>,
-              ],
-              "className": "posterWrapper flipper",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "★",
-                  "className": "front active",
-                },
-                "ref": null,
-                "rendered": "★",
-                "type": "button",
+                "className": "Card flip-container",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "★",
-                  "className": "back active",
-                  "id": undefined,
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "★",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "alt": "Movie poster from Minions",
-                  "className": "front",
-                  "src": "https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "img",
-              },
-              Object {
+              "ref": null,
+              "rendered": Object {
                 "instance": null,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    <h1
-                      className="movie-title"
+                    <button
+                      className="front active"
                     >
-                      Minions
-                    </h1>,
-                    <p
-                      className="date"
+                      ★
+                    </button>,
+                    <button
+                      className="back active"
+                      id={undefined}
+                      onClick={[Function]}
                     >
-                      2015
-                    </p>,
-                    <p
-                      className="rating"
+                      ★
+                    </button>,
+                    <img
+                      alt="Movie poster from The Maze Runner"
+                      className="front"
+                      src="https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg"
+                    />,
+                    <div
+                      className="textBox back"
                     >
-                      Rating: 6.4 / 10
-                    </p>,
-                    <p>
-                      Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
-                    </p>,
+                      <h1
+                        className="movie-title"
+                      >
+                        The Maze Runner
+                      </h1>
+                      <p
+                        className="date"
+                      >
+                        2014
+                      </p>
+                      <p
+                        className="rating"
+                      >
+                        Rating: 7 / 10
+                      </p>
+                      <p>
+                        Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                      </p>
+                    </div>,
                   ],
-                  "className": "textBox back",
+                  "className": "posterWrapper flipper",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -1122,54 +1053,349 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Minions",
-                      "className": "movie-title",
+                      "children": "★",
+                      "className": "front active",
                     },
                     "ref": null,
-                    "rendered": "Minions",
-                    "type": "h1",
+                    "rendered": "★",
+                    "type": "button",
                   },
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "2015",
-                      "className": "date",
+                      "children": "★",
+                      "className": "back active",
+                      "id": undefined,
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "2015",
-                    "type": "p",
+                    "rendered": "★",
+                    "type": "button",
                   },
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Rating: 6.4 / 10",
-                      "className": "rating",
+                      "alt": "Movie poster from The Maze Runner",
+                      "className": "front",
+                      "src": "https://image.tmdb.org/t/p/w500/coss7RgL0NH6g4fC2s5atvf3dFO.jpg",
                     },
                     "ref": null,
-                    "rendered": "Rating: 6.4 / 10",
-                    "type": "p",
+                    "rendered": null,
+                    "type": "img",
                   },
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+                      "children": Array [
+                        <h1
+                          className="movie-title"
+                        >
+                          The Maze Runner
+                        </h1>,
+                        <p
+                          className="date"
+                        >
+                          2014
+                        </p>,
+                        <p
+                          className="rating"
+                        >
+                          Rating: 7 / 10
+                        </p>,
+                        <p>
+                          Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.
+                        </p>,
+                      ],
+                      "className": "textBox back",
                     },
                     "ref": null,
-                    "rendered": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
-                    "type": "p",
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "The Maze Runner",
+                          "className": "movie-title",
+                        },
+                        "ref": null,
+                        "rendered": "The Maze Runner",
+                        "type": "h1",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "2014",
+                          "className": "date",
+                        },
+                        "ref": null,
+                        "rendered": "2014",
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Rating: 7 / 10",
+                          "className": "rating",
+                        },
+                        "ref": null,
+                        "rendered": "Rating: 7 / 10",
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
+                        },
+                        "ref": null,
+                        "rendered": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.",
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
                   },
                 ],
                 "type": "div",
               },
-            ],
-            "type": "div",
-          },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="posterWrapper flipper"
+                >
+                  <button
+                    className="front active"
+                  >
+                    ★
+                  </button>
+                  <button
+                    className="back active"
+                    id={undefined}
+                    onClick={[Function]}
+                  >
+                    ★
+                  </button>
+                  <img
+                    alt="Movie poster from Minions"
+                    className="front"
+                    src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
+                  />
+                  <div
+                    className="textBox back"
+                  >
+                    <h1
+                      className="movie-title"
+                    >
+                      Minions
+                    </h1>
+                    <p
+                      className="date"
+                    >
+                      2015
+                    </p>
+                    <p
+                      className="rating"
+                    >
+                      Rating: 6.4 / 10
+                    </p>
+                    <p>
+                      Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                    </p>
+                  </div>
+                </div>,
+                "className": "Card flip-container",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <button
+                      className="front active"
+                    >
+                      ★
+                    </button>,
+                    <button
+                      className="back active"
+                      id={undefined}
+                      onClick={[Function]}
+                    >
+                      ★
+                    </button>,
+                    <img
+                      alt="Movie poster from Minions"
+                      className="front"
+                      src="https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg"
+                    />,
+                    <div
+                      className="textBox back"
+                    >
+                      <h1
+                        className="movie-title"
+                      >
+                        Minions
+                      </h1>
+                      <p
+                        className="date"
+                      >
+                        2015
+                      </p>
+                      <p
+                        className="rating"
+                      >
+                        Rating: 6.4 / 10
+                      </p>
+                      <p>
+                        Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                      </p>
+                    </div>,
+                  ],
+                  "className": "posterWrapper flipper",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "★",
+                      "className": "front active",
+                    },
+                    "ref": null,
+                    "rendered": "★",
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "★",
+                      "className": "back active",
+                      "id": undefined,
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "★",
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "Movie poster from Minions",
+                      "className": "front",
+                      "src": "https://image.tmdb.org/t/p/w500/q0R4crx2SehcEEQEkYObktdeFy.jpg",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <h1
+                          className="movie-title"
+                        >
+                          Minions
+                        </h1>,
+                        <p
+                          className="date"
+                        >
+                          2015
+                        </p>,
+                        <p
+                          className="rating"
+                        >
+                          Rating: 6.4 / 10
+                        </p>,
+                        <p>
+                          Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.
+                        </p>,
+                      ],
+                      "className": "textBox back",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Minions",
+                          "className": "movie-title",
+                        },
+                        "ref": null,
+                        "rendered": "Minions",
+                        "type": "h1",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "2015",
+                          "className": "date",
+                        },
+                        "ref": null,
+                        "rendered": "2015",
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Rating: 6.4 / 10",
+                          "className": "rating",
+                        },
+                        "ref": null,
+                        "rendered": "Rating: 6.4 / 10",
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+                        },
+                        "ref": null,
+                        "rendered": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
+            },
+          ],
           "type": "div",
         },
       ],

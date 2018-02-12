@@ -84,7 +84,15 @@ export class Card extends Component {
           </div>
         );
       });
-      return <div className="cardWrapper">{renderedMovies}</div>;
+      return (
+        <div>
+          {
+            this.props.favorites.length === 0 &&
+            <h1 className='no-favorites'>{`You don't have any favorites`}</h1>
+          }
+          <div className="cardWrapper">{renderedMovies}</div>
+        </div>
+      );
     }
   }
 }
