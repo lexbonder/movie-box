@@ -130,14 +130,17 @@ nav a:hover,
   header {
     height: 280px;
   }
+  
   .logo1 {
     top: 20px;
     padding: 5px 50px 5px 30px;
   }
+
   .logo2 {
     top: 70px;
     padding: 5px 50px 5px 30px;
   }
+
   .login,
   .log-out {
     position: absolute;
@@ -145,5 +148,5 @@ nav a:hover,
     right: 0;
     color: #fff;
   }
-  
+
 }

@@ -18,9 +18,7 @@ export class Card extends Component {
   handleFavClick = (event, movie) => {
     event.preventDefault();
     const { id } = this.props.user;
-
-    id
-      ? this.toggleFavorite(id, movie)
+    id ? this.toggleFavorite(id, movie)
       : this.setState({ favWithoutUser: true });
   };
 
