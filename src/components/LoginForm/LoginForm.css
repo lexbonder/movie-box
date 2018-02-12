@@ -1,35 +1,35 @@
-.login-wrap{
-  width:300px;
+.login-wrap {
   margin: 30px auto auto auto;
+  width:300px;
 }
 
 article {
-  background-color: white;
-  padding: 15px;
   margin: auto;
+  padding: 15px;
+  background-color: white;
 }
 
 button {
-  font-size: 22px;
   width: 150px;
   height: 40px;
+  font-size: 22px;
 }
 
 .non-focused {
-  background-color: #ccc;
   color: gray;
+  background-color: #ccc;
 }
 
 .non-focused:hover {
-  background-color: #ddd;
   color: #333;
+  background-color: #ddd;
 }
 
 input {
-  width: 270px;
-  font-size: 20px;
   margin: 15px 0;
   padding: 10px;
+  width: 270px;
+  font-size: 20px;
 }
 
 .error-message {

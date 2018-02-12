@@ -38,10 +38,8 @@ export const createUser = async userInfo => {
       }
     });
     const returnedObject = await reply.json()
-    return returnedObject
-    // -- Trying to get user object
+    return returnedObject;
   } catch (createUserError) {
-    createUserError = new Error('Add user is broken');
     return createUserError;
   }
 };
@@ -78,9 +76,7 @@ export const getFavArray = async id => {
     const reply = await fetch(`/api/users/${id}/favorites/`);
     const returnedObject = await reply.json();
     return returnedObject;
-    
   } catch (getFavArrayError) {
-    getFavArrayError = new Error('GET favorites is broken');
     return getFavArrayError;
   }
 };
@@ -91,14 +87,8 @@ export const removeFavorite = async (fav_id, user_id) => {
       method: 'DELETE'
     });
     const returnedObject = await reply.json();
-    console.log('Remove it!');
-    console.log(returnedObject);
-    
     return returnedObject;
-
-    // -- Trying to get fav object
   } catch (removeFavError) {
-    removeFavError = new Error('Remove Favorite is broken');
     return removeFavError;
   }
 };
@@ -113,14 +103,8 @@ export const addFavorite = async newFav => {
       }
     });
     const returnedObject = await reply.json();
-    console.log('added!');
-    
-    console.log(returnedObject);
-    
     return returnedObject;
-    // -- Trying to get fav object
   } catch (addFavError) {
-    addFavError = new Error('Add fav is broken');
     return addFavError;
   }
 };

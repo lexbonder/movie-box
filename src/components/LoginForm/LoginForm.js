@@ -53,7 +53,7 @@ export class LoginForm extends Component {
     if (name !== '') {
       createUserResponse = await createUser({name, password, email});
     } 
-    this.handleSignUpError(createUserResponse); // First gate for errors
+    this.handleSignUpError(createUserResponse);
   }
 
   handleSignUpError = (response) => {
@@ -85,10 +85,9 @@ export class LoginForm extends Component {
     }
   }
 
-
   render() {
     let message;
-
+    
     if (this.props.history.location.state) {
       message = 'Please login or sign up to favorite a movie';
     }
