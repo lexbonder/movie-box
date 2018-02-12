@@ -1,6 +1,5 @@
 /* eslint-disable */
 import { userReducer } from '../userReducer';
-import * as actions from '../../actions';
 
 describe('userReducer', () => {
   it('should return the default state', () => {

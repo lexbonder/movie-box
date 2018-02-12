@@ -139,7 +139,7 @@ export class LoginForm extends Component {
   }
 }
 
-const { shape, number, string, func, bool } = PropTypes;
+const { shape, number, string, func, bool, oneOfType } = PropTypes;
 
 LoginForm.propTypes = {
   user: shape({
@@ -152,9 +152,12 @@ LoginForm.propTypes = {
   history: shape({
     push: func,
     location: shape({
-      state: shape({
-        needLogin: bool
-      })
+      state: oneOfType([
+        string,
+        shape({
+          needLogin: bool
+        })
+      ])
     })
   })
 };
