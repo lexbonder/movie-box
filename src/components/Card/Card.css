@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Card {
+  margin: 20px;
+  width: 300px;
+}
+
+.Card .posterWrapper {
+  position: relative;
+  background-color: rgba(70, 70, 70, 0.315); 
+  height: 450px;
+  width: 300px;
+  padding: 50px 10px;
+}
+
+.Card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 450px;
+}
+
+.Card button {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  right: -2px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 40px;
+  color: rgba(142, 142, 142, 0.9);
+  text-shadow: 2px 2px 2px rgb(0,0,0);
+}
+
+
+.Card button:hover,
+.Card button.active:hover {
+  color: rgb(210, 185, 0);
+  text-shadow: 0 0 5px rgb(210,185,0);
+}
+
+.Card button:active,
+.Card button.active:active {
+  text-shadow: 0 0 10px rgb(210,185,0);
+}
+
+button.front {
+  right: 5px;
+}
+
+button.back {
+  left: 5px;
+}
+
+.Card button.active{
+  color: rgb(210, 185, 0);
+  text-shadow: 1px 1px 1px rgba(210, 185, 0, .2);
+}
+
+.textBox {
+  position: absolute;
+  top: 50;
+  left: 0;
+  overflow: auto;
+  height: 380px;
+  padding: 0 15px;
+}
+
+.flip-container {
+  perspective: 1000px;
+}
+
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.926);
+  transform: rotateY(180deg)
+}
+
+.flipper {
+  transition: .6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back{
+  transform: rotateY(180deg);
+}
+
+.movie-title {
+  margin-bottom: -10px;
+  color: rgb(170, 0, 0);
+  font-family: 'Russo One', sans-serif;
+  font-size: 25px;
+  font-weight: lighter;
+  letter-spacing: 1.5px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.date {
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.please-login {
+  color: red;
+  text-align: center;
+}
+
+.no-favorites {
+  font-size: 2em;
+  color: rgb(170, 0, 0);
+  text-align: center;
+}
+

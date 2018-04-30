@@ -1,0 +1,38 @@
+.login-wrap {
+  margin: 30px auto auto auto;
+  width:300px;
+}
+
+article {
+  margin: auto;
+  padding: 15px;
+  background-color: white;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  font-size: 22px;
+}
+
+.non-focused {
+  color: gray;
+  background-color: #ccc;
+}
+
+.non-focused:hover {
+  color: #333;
+  background-color: #ddd;
+}
+
+input {
+  margin: 15px 0;
+  padding: 10px;
+  width: 270px;
+  font-size: 20px;
+}
+
+.error-message {
+  margin: 0;
+  color: red;
+}
